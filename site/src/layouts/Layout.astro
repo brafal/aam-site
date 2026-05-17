@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+import CookieBanner from '../components/CookieBanner.astro';
+import { defaultLocale } from '../data/i18n';
+import type { Locale } from '../data/i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  lang?: Locale;
+  jsonLd?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/images/airplane-takeoff-clouds.webp',
+  lang = defaultLocale,
+  jsonLd,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://aam.com.mk');
+const gaId = import.meta.env.PUBLIC_GA_ID;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, canonicalURL).href} />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, canonicalURL).href} />
+
+    <!-- JSON-LD structured data -->
+    {
+      jsonLd && (
+        <script type="application/ld+json" set:html={jsonLd} />
+      )
+    }
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- GA4 consent-gated -->
+    {gaId && (
+      <script>
+        {`window._gaId = '${gaId}';
+        if (localStorage.getItem('aam_cookie_consent') === 'accepted') {
+          var s = document.createElement('script');
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window._gaId;
+          s.async = true;
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', window._gaId);
+        }`}
+      </script>
+    )}
+  </head>
+  <body class="font-sans text-slate-800 bg-white antialiased">
+    <slot />
+    <CookieBanner />
+  </body>
+  <!-- Email obfuscation -->
+  <script>
+    document.querySelectorAll('.em-link').forEach(function(el) {
+      var u = el.getAttribute('data-u');
+      var d = el.getAttribute('data-d');
+      if (u && d) {
+        el.setAttribute('href', 'mailto:' + u + '@' + d);
+        if (!el.getAttribute('data-em-label')) {
+          el.textContent = u + '@' + d;
+        }
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { skp } from '../../data/pages/airports';
+import { defaultLocale } from '../../data/i18n';
+
+const lang = defaultLocale;
+---
+
+<Layout title={skp.meta.title} description={skp.meta.description}>
+  <Nav lang={lang} />
+
+  <section class="bg-surface-soft py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <span class="font-mono text-[11px] tracking-[0.22em] text-aam-blue font-semibold mb-4 inline-block">{skp.hero.badge}</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 -tracking-[0.025em] mb-3 max-w-[700px]">{skp.hero.heading}</h1>
+      <p class="text-lg text-slate-500 max-w-[640px] mb-6">{skp.hero.subtext}</p>
+      <a href="/contact?reason=airline-partnership" class="inline-flex items-center gap-2 bg-aam-blue text-white px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-aam-blue-dark transition-colors">{skp.hero.cta}</a>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">{skp.overview.heading}</h2>
+      <p class="text-base text-slate-600 leading-relaxed max-w-[800px] mb-8">{skp.overview.text}</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        {skp.overview.facts.map(f => (
+          <div class="bg-white border border-slate-200 rounded-xl p-5">
+            <span class="font-mono text-[10px] tracking-[0.14em] text-slate-400 uppercase font-semibold block mb-1">{f.label}</span>
+            <span class="text-[15px] font-semibold text-slate-900">{f.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">{skp.links.heading}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href={skp.links.urlOfficial} target="_blank" rel="noopener noreferrer" class="bg-aam-blue text-white rounded-xl p-6 hover:bg-aam-blue-dark transition-colors">
+          <span class="block text-lg font-bold mb-1">{skp.links.official}</span>
+          <span class="text-sm text-white/70">skp.airports.com.mk ↗</span>
+        </a>
+        <a href={skp.links.urlArrivals} target="_blank" rel="noopener noreferrer" class="bg-aam-blue text-white rounded-xl p-6 hover:bg-aam-blue-dark transition-colors">
+          <span class="block text-lg font-bold mb-1">{skp.links.arrivals}</span>
+          <span class="text-sm text-white/70">View arrivals ↗</span>
+        </a>
+        <a href={skp.links.urlDepartures} target="_blank" rel="noopener noreferrer" class="bg-aam-blue text-white rounded-xl p-6 hover:bg-aam-blue-dark transition-colors">
+          <span class="block text-lg font-bold mb-1">{skp.links.departures}</span>
+          <span class="text-sm text-white/70">View departures ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-24 bg-aam-blue relative overflow-hidden">
+    <div class="absolute right-[-80px] top-[-80px] w-[260px] h-[260px] bg-[radial-gradient(circle,rgba(184,134,11,.2),transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white -tracking-[0.02em] mb-3">{skp.cta.heading}</h2>
+      <p class="text-lg text-white/70 mb-6 max-w-[600px]">{skp.cta.text}</p>
+      <a href="/contact?reason=airline-partnership" class="inline-flex items-center gap-2 bg-white text-aam-blue px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-colors">{skp.hero.cta}</a>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>

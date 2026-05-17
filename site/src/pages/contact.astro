@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { meta, hero, details, form, reasons } from '../data/pages/contact';
+import { defaultLocale } from '../data/i18n';
+
+const lang = defaultLocale;
+const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <Nav lang={lang} />
+
+  <section class="bg-surface-soft py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <span class="font-mono text-[11px] tracking-[0.22em] text-aam-blue font-semibold mb-4 inline-block">{hero.badge}</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 -tracking-[0.025em] mb-3 max-w-[700px]">{hero.heading}</h1>
+      <p class="text-lg text-slate-500 max-w-[600px]">{hero.subtext}</p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">{details.heading}</h2>
+          <div class="space-y-4">
+            <div class="flex gap-3 items-start">
+              <span class="w-9 h-9 rounded-lg bg-aam-blue-light text-aam-blue grid place-items-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <strong class="block text-[15px] text-slate-900 font-semibold">{details.address}</strong>
+                <p class="text-sm text-slate-500 mt-0.5">{details.hours}</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="w-9 h-9 rounded-lg bg-aam-blue-light text-aam-blue grid place-items-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </span>
+              <div><a href="tel:+38923117009" class="text-[15px] text-slate-900 font-semibold hover:underline">{details.phone}</a></div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="w-9 h-9 rounded-lg bg-aam-blue-light text-aam-blue grid place-items-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div><a href="mailto:aaminfo@aam.com.mk" class="text-[15px] text-slate-900 font-semibold hover:underline">{details.email}</a></div>
+            </div>
+          </div>
+          <div class="mt-8 p-4 bg-surface-soft rounded-lg text-sm text-slate-500 leading-relaxed">{details.avionetNote}</div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">{form.heading}</h2>
+          <form id="contact-form" class="space-y-4">
+            <input type="hidden" name="access_key" value={web3formsKey || ''} />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1">Full name *</label>
+                <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10" placeholder="Your name">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1">Company *</label>
+                <input type="text" name="company" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10" placeholder="Your company">
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1">Email *</label>
+                <input type="email" name="email" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10" placeholder="you@company.com">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1">Phone (optional)</label>
+                <input type="tel" name="phone" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10" placeholder="+389...">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Reason for contact *</label>
+              <select id="reason-select" name="reason" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10 bg-white">
+                {reasons.map(r => <option value={r.value}>{r.label}</option>)}
+              </select>
+              <div id="avionet-hint" class="hidden mt-2 p-3 bg-surface-soft rounded-lg text-xs text-slate-500 leading-relaxed">{form.avionetHint}</div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Message *</label>
+              <textarea name="message" rows="5" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10 resize-y" placeholder="Tell us about your enquiry..."></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-aam-blue-dark transition-colors">{form.submit}</button>
+            <div id="form-success" class="hidden p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-800">{form.success}</div>
+            <div id="form-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">{form.error}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>
+
+<script>
+  const rs = document.getElementById('reason-select');
+  const hint = document.getElementById('avionet-hint');
+  const params = new URLSearchParams(window.location.search);
+  const reasonParam = params.get('reason');
+  const reasonMap = { 'airline-partnership': 'airline', 'agency': 'agency', 'corporate': 'corporate', 'general': 'general', 'press': 'press' };
+  if (reasonParam && reasonMap[reasonParam] && rs) rs.value = reasonMap[reasonParam];
+  function toggleHint() { const v = rs?.value; if (hint) hint.classList.toggle('hidden', v !== 'agency' && v !== 'corporate'); }
+  rs?.addEventListener('change', toggleHint);
+  toggleHint();
+
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('submit-btn');
+  const ok = document.getElementById('form-success');
+  const err = document.getElementById('form-error');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true; btn.textContent = 'Sending...';
+    ok?.classList.add('hidden'); err?.classList.add('hidden');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+      if (res.ok) { form.reset(); ok?.classList.remove('hidden'); }
+      else { err?.classList.remove('hidden'); }
+    } catch { err?.classList.remove('hidden'); }
+    btn.disabled = false; btn.textContent = 'Send Message';
+  });
+</script>

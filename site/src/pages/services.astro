@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { meta, hero, index, aamServices, avionetServices } from '../data/pages/services';
+import { defaultLocale } from '../data/i18n';
+
+const lang = defaultLocale;
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <Nav lang={lang} />
+
+  <section class="bg-surface-soft py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <span class="inline-flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] font-semibold text-aam-blue bg-aam-blue-light px-3.5 py-1.5 rounded-full mb-4">{hero.eyebrow}</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 -tracking-[0.025em] mb-3 max-w-[700px]">{hero.heading}</h1>
+      <p class="text-lg text-slate-500 max-w-[640px]">{hero.subtext}</p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <p class="text-base text-slate-600 leading-relaxed max-w-[760px] mb-12">{index.intro}</p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+        {aamServices.map((svc, i) => (
+          <a href={svc.href} class="group relative bg-white border border-slate-200 rounded-xl p-6 flex flex-col gap-3 transition-all hover:-translate-y-1 hover:border-aam-blue hover:shadow-[0_12px_30px_-8px_rgba(11,30,63,.12)]">
+            <span class="absolute top-0 left-6 w-6 h-[3px] bg-aam-gold rounded-b"></span>
+            <span class="text-[11px] tracking-[0.14em] text-slate-400 font-semibold font-mono">0{i + 1}</span>
+            <h3 class="text-lg font-bold text-slate-900">{svc.name}</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">{svc.desc}</p>
+            <div class="mt-auto pt-2 flex items-center justify-between">
+              <span class="text-xs font-medium text-aam-blue">Learn more →</span>
+              <span class="text-[10px] text-slate-400">{svc.provider}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="flex items-center gap-4 mb-8">
+        <span class="font-mono text-[10px] tracking-[0.14em] text-slate-400 uppercase font-semibold">{index.avionetNote}</span>
+        <span class="flex-1 h-px bg-slate-200"></span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        {avionetServices.map(svc => (
+          <a href={svc.href} class="group relative bg-white border border-slate-200 rounded-xl p-6 flex flex-col gap-3 transition-all hover:-translate-y-1 hover:border-aam-blue hover:shadow-[0_12px_30px_-8px_rgba(11,30,63,.12)]">
+            <span class="absolute top-0 left-6 w-6 h-[3px] bg-aam-gold rounded-b"></span>
+            <h3 class="text-lg font-bold text-slate-900">{svc.name}</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">{svc.desc}</p>
+            <div class="mt-auto pt-2 flex items-center justify-between">
+              <span class="text-xs font-medium text-aam-blue">Learn more →</span>
+              <span class="text-[10px] text-slate-400">{svc.provider}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-24 bg-aam-blue relative overflow-hidden">
+    <div class="absolute right-[-80px] top-[-80px] w-[260px] h-[260px] bg-[radial-gradient(circle,rgba(184,134,11,.2),transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white -tracking-[0.02em] mb-4">Work with AAM Airport Services</h2>
+      <a href="/contact?reason=airline-partnership" class="inline-flex items-center gap-2 bg-white text-aam-blue px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-colors">Get in Touch</a>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>

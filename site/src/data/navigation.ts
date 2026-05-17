@@ -1,0 +1,25 @@
+export const navLinks = [
+  {
+    label: 'Services',
+    path: '/services',
+    children: [
+      { label: 'Ground Handling', path: '/services/ground-handling' },
+      { label: 'Passenger Services', path: '/services/passenger-services' },
+      { label: 'Fuel Services', path: '/services/fuel-services' },
+      { label: 'Cargo & Logistics', path: '/services/cargo-logistics' },
+      { label: 'divider' as const, path: '' },
+      { label: 'Ticket Consolidation (Avionet)', path: '/services/ticket-consolidation' },
+      { label: 'Corporate Travel (Avionet)', path: '/services/corporate-travel' },
+    ],
+  },
+  {
+    label: 'Airports',
+    path: '/airports',
+    children: [
+      { label: 'Skopje — SKP', path: '/airports/skp' },
+      { label: 'Ohrid — OHD', path: '/airports/ohd' },
+    ],
+  },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+] as const;

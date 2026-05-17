@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { defaultLocale } from '../data/i18n';
+
+const lang = defaultLocale;
+---
+
+<Layout title="Page not found | AAM Airport Services" description="The page you're looking for doesn't exist or has been moved.">
+  <Nav lang={lang} />
+  <section class="min-h-[60vh] flex items-center justify-center">
+    <div class="text-center px-4 py-20">
+      <h1 class="text-5xl font-bold text-aam-blue mb-3">Page not found</h1>
+      <p class="text-lg text-slate-500 mb-8">The page you're looking for doesn't exist or has been moved.</p>
+      <a href="/" class="inline-flex items-center gap-2 bg-aam-blue text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-aam-blue-dark transition-colors">Back to Home</a>
+    </div>
+  </section>
+  <Footer lang={lang} />
+</Layout>

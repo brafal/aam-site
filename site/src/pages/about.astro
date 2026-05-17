@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { timeline, gm } from '../data/site';
+import { meta, hero, intro, group, leadership, historyTimeline, closingCta } from '../data/pages/about';
+import { defaultLocale } from '../data/i18n';
+
+const lang = defaultLocale;
+---
+
+<Layout title={meta.title} description={meta.description} ogImage="/images/airplane-takeoff-clouds.webp">
+  <Nav lang={lang} />
+
+  <!-- Hero -->
+  <section class="relative h-[400px] bg-slate-900 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/images/airplane-takeoff-clouds.webp')"></div>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center">
+      <div>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.22em] text-white bg-white/15 px-4 py-2 rounded-full mb-4">{hero.badge}</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white -tracking-[0.02em] mb-3 max-w-[700px]">{hero.heading}</h1>
+        <p class="text-lg text-white/80 max-w-[600px]">{hero.subtext}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">{intro.heading}</h2>
+      {intro.paragraphs.map(p => <p class="text-base text-slate-600 leading-relaxed mb-4">{p}</p>)}
+    </div>
+  </section>
+
+  <!-- Group Cards -->
+  <section class="py-16 md:py-20 bg-surface-soft">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-slate-900 mb-10">{group.heading}</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col">
+          <h3 class="text-xl font-bold text-slate-900 mb-1">{group.aamDoel.name}</h3>
+          <p class="text-[11px] tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.aamDoel.role}</p>
+          <div class="space-y-1.5 text-sm text-slate-500 mb-6">
+            <p>{group.aamDoel.address}</p>
+            <p class="font-mono text-[12px] text-slate-400">{group.aamDoel.embs}</p>
+            <p class="font-mono text-[12px] text-slate-400">{group.aamDoel.edb}</p>
+            <p class="font-mono text-[12px] text-slate-400">{group.aamDoel.activity}</p>
+          </div>
+        </div>
+        <div class="bg-aam-blue text-white rounded-xl p-7 flex flex-col">
+          <h3 class="text-xl font-bold text-white mb-1">{group.aamAirport.name}</h3>
+          <p class="text-[11px] tracking-[0.14em] text-aam-gold uppercase font-semibold font-mono mb-4">{group.aamAirport.role}</p>
+          <p class="text-sm text-white/70 leading-relaxed mb-6">{group.aamAirport.desc}</p>
+          <a href="/services" class="mt-auto inline-flex items-center gap-2 text-aam-gold font-semibold text-sm hover:underline">{group.aamAirport.cta} →</a>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col">
+          <h3 class="text-xl font-bold text-slate-900 mb-1">{group.avionet.name}</h3>
+          <p class="text-[11px] tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.avionet.role}</p>
+          <p class="text-sm text-slate-500 leading-relaxed mb-6">{group.avionet.desc}</p>
+          <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-aam-blue font-semibold text-sm hover:underline">{group.avionet.cta} ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">{leadership.heading}</h2>
+      <h3 class="text-xl font-bold text-slate-900 mb-1">{gm.name}</h3>
+      <p class="text-sm text-slate-500 mb-2">{gm.title}</p>
+      <a href={gm.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-slate-400 hover:text-aam-blue transition-colors">LinkedIn ↗</a>
+      <p class="text-sm text-slate-500 mt-6 pt-6 border-t border-slate-200">{leadership.ownership}</p>
+    </div>
+  </section>
+
+  <!-- History Timeline — vertical alternating -->
+  <section class="py-20 md:py-24 bg-aam-blue relative overflow-hidden">
+    <div class="absolute left-[-100px] top-[-100px] w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(184,134,11,.08),transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="mb-14">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-gold bg-aam-gold/10 px-3 py-1.5 rounded-full mb-4">{historyTimeline.eyebrow}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white -tracking-[0.015em]">{historyTimeline.heading}</h2>
+      </div>
+      <div class="relative">
+        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/15 -translate-x-1/2"></div>
+        {timeline.map((event, i) => (
+          <div class={`flex flex-col md:flex-row items-start ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+            <div class={`hidden md:flex w-1/2 ${i % 2 === 0 ? 'justify-end pr-8' : 'pl-8'}`}>
+              <div class={`bg-white/5 border border-white/10 rounded-xl p-5 max-w-[340px] backdrop-blur-sm hover:bg-white/8 transition-colors ${i % 2 === 0 ? 'text-right' : ''}`}>
+                <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-1">{event.period}</span>
+                <h4 class="text-lg font-bold text-white mb-1.5">{event.title}</h4>
+                <p class="text-[13px] text-white/70 leading-relaxed">{event.text}</p>
+              </div>
+            </div>
+            <div class="hidden md:flex relative w-0 justify-center">
+              <span class="absolute top-6 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
+            </div>
+            <div class="md:hidden w-full pl-6 border-l-2 border-aam-gold/30 pb-8 relative">
+              <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
+              <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-2">{event.period}</span>
+              <h4 class="text-lg font-bold text-white mb-1.5">{event.title}</h4>
+              <p class="text-[13px] text-white/70 leading-relaxed">{event.text}</p>
+            </div>
+            <div class="hidden md:block w-1/2"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="py-20 md:py-24 bg-surface-soft">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">{closingCta.heading}</h2>
+      <a href="/contact" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3.5 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">{closingCta.cta}</a>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>

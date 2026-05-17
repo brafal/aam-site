@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { ticketConsolidation as page } from '../../data/pages/services';
+import { defaultLocale } from '../../data/i18n';
+
+const lang = defaultLocale;
+---
+
+<Layout title={page.meta.title} description={page.meta.description}>
+  <Nav lang={lang} />
+  <section class="bg-surface-soft py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 -tracking-[0.025em] mb-2">{page.hero.heading}</h1>
+      <p class="text-sm text-slate-400 font-mono tracking-[0.1em] uppercase mb-4">{page.hero.providerLine}</p>
+      <p class="text-lg text-slate-500 max-w-[640px]">{page.hero.intro}</p>
+    </div>
+  </section>
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">{page.body.heading}</h2>
+      <ul class="space-y-2 mb-10">
+        {page.body.items.map(item => (
+          <li class="flex items-start gap-3 text-[15px] text-slate-600"><svg class="w-4 h-4 text-aam-gold shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>{item}</li>
+        ))}
+      </ul>
+      <div class="bg-surface-soft rounded-xl p-6 mb-10">
+        <h3 class="text-lg font-bold text-slate-900 mb-2">{page.body.whoForHeading}</h3>
+        <p class="text-sm text-slate-600">{page.body.whoForText}</p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-aam-blue text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-aam-blue-dark transition-colors">Visit avio.net.mk ↗</a>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-aam-blue border border-slate-300 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-slate-50 transition-colors">Contact AAM</a>
+      </div>
+    </div>
+  </section>
+  <Footer lang={lang} />
+</Layout>

@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { stats, partners, timeline } from '../data/site';
+import {
+  meta, hero, servicesOverview, aboutSection, timelineSection,
+  airportsSection, avionetSection, partnersSection, closingCta, contactSection,
+} from '../data/pages/home';
+import { defaultLocale } from '../data/i18n';
+
+const lang = defaultLocale;
+const orgJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AAM DOOEL Skopje',
+  url: 'https://aam.com.mk',
+  logo: 'https://aam.com.mk/logo/AAM-logo.svg',
+  contactPoint: { '@type': 'ContactPoint', telephone: '+389 2 3117 009', contactType: 'customer service', availableLanguage: ['English', 'Macedonian'] },
+  sameAs: ['https://facebook.com/aamairportservices'],
+});
+---
+
+<Layout title={meta.title} description={meta.description} jsonLd={orgJsonLd} ogImage="/images/departures-board.webp">
+  <Nav lang={lang} />
+
+  <!-- ===== HERO ===== -->
+  <section id="hero-slideshow" class="relative h-screen min-h-[600px] bg-slate-900 overflow-hidden">
+    <div id="slide-0" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image:url('/images/airplane-takeoff-clouds.webp')"></div>
+    <div id="slide-1" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('/images/airplane-clouds.webp')"></div>
+    <div id="slide-2" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('/images/airport-handling.webp')"></div>
+    <div class="absolute inset-0 bg-black/55 z-10"></div>
+
+    <!-- Dots -->
+    <div id="dots" class="absolute top-8 right-8 flex gap-2 z-30">
+      <button data-slide="0" class="w-6 h-1 rounded-full bg-gold/50 hover:bg-gold transition-colors"></button>
+      <button data-slide="1" class="w-6 h-1 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
+      <button data-slide="2" class="w-6 h-1 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
+    </div>
+
+    <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center">
+      <div class="max-w-[640px]">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.22em] text-white bg-white/15 px-4 py-2 rounded-full mb-6">
+          {hero.badge}
+        </span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.05] -tracking-[0.02em] mb-4">
+          {hero.heading}
+        </h1>
+        <p class="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-[580px]">
+          {hero.subheading}
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 bg-white text-aam-blue px-8 py-3.5 rounded-md font-semibold text-sm hover:bg-slate-100 transition-colors">
+            {hero.ctaPrimary}
+          </a>
+          <a href="/services" class="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-3.5 rounded-md font-semibold text-sm hover:bg-white/10 transition-colors">
+            {hero.ctaSecondary}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero slideshow script -->
+  <script>
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const dots = document.querySelectorAll('#dots button');
+    function showSlide(n) {
+      for (let i = 0; i < totalSlides; i++) {
+        const el = document.getElementById('slide-' + i);
+        if (el) { el.style.opacity = i === n ? '1' : '0'; el.classList.toggle('opacity-100', i === n); el.classList.toggle('opacity-0', i !== n); }
+      }
+      dots.forEach((d, i) => {
+        d.classList.toggle('bg-gold/50', i === n);
+        d.classList.toggle('bg-gold', i === n);
+        d.classList.toggle('bg-white/30', i !== n);
+        d.classList.toggle('hover:bg-gold', i === n);
+        d.classList.toggle('hover:bg-white/50', i !== n);
+      });
+      currentSlide = n;
+    }
+    dots.forEach(d => d.addEventListener('click', () => showSlide(parseInt(d.dataset.slide || '0'))));
+    setInterval(() => showSlide((currentSlide + 1) % totalSlides), 5000);
+  </script>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="bg-aam-blue py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat, i) => (
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-white mb-1">{stat.value}</div>
+            <div class="text-xs font-semibold uppercase tracking-[0.14em] text-white/65">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          {servicesOverview.eyebrow}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-3">{servicesOverview.heading}</h2>
+        <p class="text-lg text-slate-500 max-w-[720px]">{servicesOverview.tagline}</p>
+      </div>
+
+      <!-- 3+2 grid -->
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        {servicesOverview.cards.slice(0, 3).map(svc => (
+          <a href={svc.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-aam-blue/40 transition-all duration-200 flex flex-col">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{svc.name}</h3>
+            <p class="text-sm text-slate-500 mb-4 leading-relaxed">{svc.desc}</p>
+            <ul class="space-y-2 mt-auto">
+              {svc.bullets.map(b => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-700">
+                  <svg class="w-4 h-4 text-aam-blue shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </a>
+        ))}
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-[66%] mx-auto">
+        {servicesOverview.cards.slice(3, 5).map(svc => (
+          <a href={svc.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-aam-blue/40 transition-all duration-200 flex flex-col">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{svc.name}</h3>
+            <p class="text-sm text-slate-500 mb-4 leading-relaxed">{svc.desc}</p>
+            <ul class="space-y-2 mt-auto">
+              {svc.bullets.map(b => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-700">
+                  <svg class="w-4 h-4 text-aam-blue shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </a>
+        ))}
+      </div>
+
+      <!-- Mid-page CTA -->
+      <div class="mt-10 bg-aam-blue rounded-xl p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
+        <div class="absolute right-[-60px] top-[-60px] w-[200px] h-[200px] bg-[radial-gradient(circle,rgba(184,134,11,.18),transparent_70%)] pointer-events-none"></div>
+        <div class="relative z-10">
+          <p class="text-xl font-bold text-white mb-1">{servicesOverview.midCta.heading}</p>
+          <p class="text-sm text-white/70">{servicesOverview.midCta.subtext}</p>
+        </div>
+        <a href="/contact?reason=airline-partnership" class="relative z-10 shrink-0 inline-flex items-center gap-2 bg-white text-aam-blue px-6 py-3 rounded-md font-semibold text-sm hover:bg-slate-100 transition-colors">
+          {servicesOverview.midCta.cta} →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="py-20 md:py-24 bg-surface-soft">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-[1.05fr_1fr] gap-12 items-stretch">
+        <div class="relative rounded-xl overflow-hidden min-h-[460px] bg-gradient-to-br from-[#0F2440] to-[#1B365D]">
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/images/Skopje_Alexander_the_Great_Airport.webp')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2440]/85 via-[#0F2440]/20 to-transparent"></div>
+          <div class="absolute left-6 bottom-6 bg-white rounded-xl px-5 py-4 shadow-lg flex items-center gap-3 z-10">
+            <span class="text-3xl font-bold text-aam-blue">30+</span>
+            <span class="text-sm font-medium text-slate-600 leading-tight">Years on the<br/>ground at SKP & OHD</span>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center py-6">
+          <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4 w-fit">
+            {aboutSection.eyebrow}
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-5">{aboutSection.heading}</h2>
+          {aboutSection.paragraphs.map(p => <p class="text-base text-slate-600 leading-relaxed mb-4">{p}</p>)}
+          <div class="grid grid-cols-3 gap-3 mt-4">
+            {aboutSection.facts.map(f => (
+              <div class="bg-white border border-slate-200 rounded-lg px-4 py-3">
+                <div class="text-[10px] uppercase tracking-[0.12em] text-slate-400 font-semibold mb-1">{f.label}</div>
+                <div class="text-[13px] font-semibold text-slate-800 leading-tight">{f.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="py-20 md:py-24 bg-aam-blue relative overflow-hidden">
+    <div class="absolute left-[-100px] top-[-100px] w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(184,134,11,.08),transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="mb-14">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-gold bg-aam-gold/10 px-3 py-1.5 rounded-full mb-4">
+          {timelineSection.eyebrow}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white -tracking-[0.015em]">{timelineSection.heading}</h2>
+      </div>
+      <div class="relative">
+        <!-- Center line -->
+        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/15 -translate-x-1/2"></div>
+        <div class="space-y-0">
+          {timeline.map((event, i) => (
+            <div class={`flex flex-col md:flex-row items-start gap-0 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+              <div class={`hidden md:flex w-1/2 ${i % 2 === 0 ? 'justify-end pr-8' : 'pl-8'}`}>
+                <div class={`bg-white/5 border border-white/10 rounded-xl p-5 max-w-[340px] backdrop-blur-sm hover:bg-white/8 transition-colors ${i % 2 === 0 ? 'text-right' : ''}`}>
+                  <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-1">{event.period}</span>
+                  <h4 class="text-lg font-bold text-white mb-1.5">{event.title}</h4>
+                  <p class="text-[13px] text-white/70 leading-relaxed">{event.text}</p>
+                </div>
+              </div>
+              <div class="hidden md:flex relative w-0 justify-center">
+                <span class="absolute top-6 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
+              </div>
+              <div class="md:hidden w-full pl-6 border-l-2 border-aam-gold/30 pb-8 relative">
+                <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
+                <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-2">{event.period}</span>
+                <h4 class="text-lg font-bold text-white mb-1.5">{event.title}</h4>
+                <p class="text-[13px] text-white/70 leading-relaxed">{event.text}</p>
+              </div>
+              <div class="hidden md:block w-1/2"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AIRPORTS ===== -->
+  <section class="py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          {airportsSection.eyebrow}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-3">{airportsSection.heading}</h2>
+        <p class="text-lg text-slate-500">{airportsSection.tagline}</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          { key: 'skp', d: airportsSection.skp, href: '/airports/skp', img: '/images/Skopje_Alexander_the_Great_Airport.webp' },
+          { key: 'ohd', d: airportsSection.ohd, href: '/airports/ohd', img: '/images/Ohrid-Airport.webp' },
+        ].map(ap => (
+          <a href={ap.href} class="group relative rounded-2xl overflow-hidden min-h-[400px] flex flex-col justify-end transition-transform hover:-translate-y-1">
+            <div class="absolute inset-0 bg-cover bg-center" style={`background-image:url('${ap.img}')`}></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2440]/90 via-[#0F2440]/30 to-transparent z-10"></div>
+            <div class="relative z-20 p-8 text-white">
+              <span class="inline-block bg-white/95 text-aam-blue font-mono font-bold text-sm tracking-[0.1em] px-3 py-1.5 rounded-lg mb-3">{ap.d.code}</span>
+              <h3 class="text-2xl font-bold mb-2">{ap.d.name}</h3>
+              <p class="text-sm text-white/80 max-w-[380px] mb-4">{ap.d.desc}</p>
+              <ul class="space-y-1.5 mb-4">
+                {ap.d.bullets.map(b => (
+                  <li class="flex items-center gap-2.5 text-sm text-white/75">
+                    <svg class="w-4 h-4 text-aam-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <span class="text-sm font-medium text-white/90 group-hover:text-aam-gold transition-colors">View details →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AVIONET ===== -->
+  <section class="py-20 md:py-24 bg-surface-soft">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          {avionetSection.eyebrow}
+        </span>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.14em] text-aam-blue border border-aam-blue/30 px-3 py-1 rounded-md mb-4 ml-3">
+          {avionetSection.badge}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-3">{avionetSection.heading}</h2>
+        <p class="text-base text-slate-600 leading-relaxed max-w-[720px] mb-8">{avionetSection.intro}</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">{avionetSection.forAgencies.heading}</h3>
+            <ul class="space-y-2">
+              {avionetSection.forAgencies.bullets.map(b => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-600">
+                  <svg class="w-4 h-4 text-aam-blue shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">{avionetSection.forCorporate.heading}</h3>
+            <ul class="space-y-2">
+              {avionetSection.forCorporate.bullets.map(b => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-600">
+                  <svg class="w-4 h-4 text-aam-blue shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+          {avionetSection.features.map(f => (
+            <div class="bg-white border border-slate-200 rounded-xl p-5">
+              <h4 class="font-bold text-slate-900 mb-1">{f.title}</h4>
+              <p class="text-sm text-slate-500">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-aam-blue text-white px-6 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
+          {avionetSection.cta} ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARTNERS ===== -->
+  <section class="py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          {partnersSection.eyebrow}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-3">{partnersSection.heading}</h2>
+        <p class="text-lg text-slate-500">{partnersSection.tagline}</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {partners.map(p => (
+          <a href={p.website || '#'} target="_blank" rel="noopener noreferrer" class={`flex flex-col items-center gap-2 p-5 rounded-xl border border-slate-200 bg-white hover:border-aam-blue/30 hover:shadow-sm transition-all text-center ${!p.current ? 'opacity-50 hover:opacity-75' : ''}`}>
+            <span class="font-semibold text-[15px] text-slate-900">{p.name}</span>
+            {'iata' in p && p.iata ? <span class="text-[11px] tracking-[0.14em] text-slate-400 font-mono uppercase">{p.iata}</span> : null}
+            <span class="text-[12px] text-slate-500">{p.relationship}</span>
+            <span class="text-[10px] tracking-[0.1em] text-slate-400 font-mono uppercase mt-auto">{p.period || ''}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLOSING CTA ===== -->
+  <section class="py-20 md:py-24 bg-aam-blue relative overflow-hidden">
+    <div class="absolute right-[-80px] top-[-80px] w-[260px] h-[260px] bg-[radial-gradient(circle,rgba(184,134,11,.18),transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white -tracking-[0.015em] mb-4">{closingCta.heading}</h2>
+      <p class="text-lg text-white/70 mb-8 max-w-[640px] mx-auto">{closingCta.subtext}</p>
+      <a href="/contact?reason=airline-partnership" class="inline-flex items-center gap-2 bg-white text-aam-blue px-8 py-3.5 rounded-md font-semibold text-sm hover:bg-slate-100 transition-colors">
+        {closingCta.cta}
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CARDS ===== -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">{contactSection.heading}</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {contactSection.cards.map(c => (
+          c.href ? (
+            <a href={c.href} class="bg-white border border-slate-200 rounded-xl p-5 text-center hover:shadow-md hover:border-aam-blue/30 transition-all">
+              <div class="text-xs font-semibold uppercase tracking-widest text-aam-blue mb-2">{c.label}</div>
+              <div class="text-[15px] font-semibold text-slate-800">{c.value}</div>
+              {c.sub && <div class="text-xs text-slate-400 mt-1">{c.sub}</div>}
+            </a>
+          ) : (
+            <div class="bg-white border border-slate-200 rounded-xl p-5 text-center">
+              <div class="text-xs font-semibold uppercase tracking-widest text-aam-blue mb-2">{c.label}</div>
+              <div class="text-[15px] font-semibold text-slate-800">{c.value}</div>
+              {c.sub && <div class="text-xs text-slate-400 mt-1">{c.sub}</div>}
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>

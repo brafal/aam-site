@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /mk/
+Disallow: /api/
+
+Sitemap: https://aam.com.mk/sitemap-index.xml
