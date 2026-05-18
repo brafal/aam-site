@@ -3,6 +3,7 @@ import '../styles/global.css';
 import CookieBanner from '../components/CookieBanner.astro';
 import { defaultLocale } from '../data/i18n';
 import type { Locale } from '../data/i18n';
+import { GA_ID as gaId } from '../data/env';
 
 interface Props {
   title: string;
@@ -21,7 +22,6 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://aam.com.mk');
-const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
@@ -38,6 +38,9 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

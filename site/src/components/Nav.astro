@@ -21,7 +21,7 @@ const enUrl = switchLang(currentPath, 'en');
 
 <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-24">
 
       <!-- Logo -->
       <a href={lang === 'mk' ? '/mk' : '/'} class="flex items-center gap-3 shrink-0">
@@ -30,7 +30,7 @@ const enUrl = switchLang(currentPath, 'en');
           alt="AAM Airport Services"
           width="908"
           height="135"
-          class="h-8 w-auto"
+          class="h-12 w-auto"
           loading="eager"
         />
       </a>
@@ -42,7 +42,7 @@ const enUrl = switchLang(currentPath, 'en');
             <div class="relative group">
               <a
                 href={link.path}
-                class={`px-3 py-2 text-sm font-semibold transition-colors inline-flex items-center gap-1 ${
+                class={`px-3 py-2 text-base font-semibold transition-colors inline-flex items-center gap-1 ${
                   isActive(link.path)
                     ? 'text-aam-blue'
                     : 'text-slate-600 hover:text-slate-900 rounded-md hover:bg-surface-soft'
@@ -64,7 +64,7 @@ const enUrl = switchLang(currentPath, 'en');
                     ) : (
                       <a
                         href={child.path}
-                        class="block px-5 py-2.5 text-sm text-slate-600 hover:text-aam-blue hover:bg-surface-soft transition-colors"
+                        class="block px-5 py-2.5 text-base text-slate-600 hover:text-aam-blue hover:bg-surface-soft transition-colors"
                       >
                         {child.label}
                       </a>
@@ -78,7 +78,7 @@ const enUrl = switchLang(currentPath, 'en');
 
         <!-- Phone + Lang + CTA -->
         <div class="flex items-center ml-3 pl-3 border-l border-slate-200 gap-3">
-          <a href="tel:+38923117009" class="text-sm font-semibold text-slate-700 hover:text-aam-blue transition-colors whitespace-nowrap">
+          <a href="tel:+38923117009" class="text-base font-semibold text-slate-700 hover:text-aam-blue transition-colors whitespace-nowrap">
             +389 2 3117 009
           </a>
 
@@ -95,7 +95,7 @@ const enUrl = switchLang(currentPath, 'en');
             >MK</a>
           </div>
 
-          <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-aam-blue-dark transition-colors whitespace-nowrap">
+          <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-base font-semibold px-4 py-2 rounded-md hover:bg-aam-blue-dark transition-colors whitespace-nowrap">
             Get in Touch
           </a>
         </div>
@@ -123,7 +123,7 @@ const enUrl = switchLang(currentPath, 'en');
         <div>
           <a
             href={link.path}
-            class={`block px-3 py-2.5 rounded-md text-sm font-semibold mb-1 transition-colors ${
+            class={`block px-3 py-2.5 rounded-md text-base font-semibold mb-1 transition-colors ${
               isActive(link.path)
                 ? 'bg-aam-blue-light text-aam-blue'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-surface-soft'
@@ -139,7 +139,7 @@ const enUrl = switchLang(currentPath, 'en');
                 ) : (
                   <a
                     href={child.path}
-                    class="block px-2 py-1.5 rounded text-sm text-slate-500 hover:text-aam-blue hover:bg-surface-soft transition-colors"
+                    class="block px-2 py-1.5 rounded text-base text-slate-500 hover:text-aam-blue hover:bg-surface-soft transition-colors"
                   >
                     {child.label}
                   </a>
@@ -150,8 +150,8 @@ const enUrl = switchLang(currentPath, 'en');
         </div>
       ))}
       <div class="flex items-center gap-3 px-3 pt-3 border-t border-slate-100 mt-2">
-        <a href="tel:+38923117009" class="text-sm font-semibold text-slate-700">+389 2 3117 009</a>
-        <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-sm font-semibold px-4 py-2 rounded-md">Get in Touch</a>
+        <a href="tel:+38923117009" class="text-base font-semibold text-slate-700">+389 2 3117 009</a>
+        <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-base font-semibold px-4 py-2 rounded-md">Get in Touch</a>
         <div class="flex items-center gap-1 text-xs font-mono font-bold ml-auto">
           <a href={enUrl} class={`px-1.5 py-0.5 rounded ${lang === 'en' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-400'}`}>EN</a>
           <a href={mkUrl} class={`px-1.5 py-0.5 rounded ${lang === 'mk' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-300 cursor-not-allowed'}`}>MK</a>

@@ -90,7 +90,7 @@ export const aboutSection = {
   ],
   facts: [
     { label: 'Company', value: 'AAM DOOEL Skopje' },
-    { label: 'Founded', value: '1992 (operating since 1995)' },
+    { label: 'Founded', value: '1992' },
     { label: 'Country', value: 'Macedonia' },
   ],
 };
