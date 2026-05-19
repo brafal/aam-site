@@ -18,7 +18,7 @@ import { WEB3FORMS_OPS_KEY as web3formsKey } from '../../data/env';
         <input type="hidden" name="access_key" value={web3formsKey} />
         <input type="hidden" name="subject" value="Safety Report — AAM Ops" />
         <input type="hidden" name="from_name" value="AAM Ops — Safety Report" />
-        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
 
         <div class="grid sm:grid-cols-2 gap-4 mb-4">
           <div>
@@ -48,6 +48,7 @@ import { WEB3FORMS_OPS_KEY as web3formsKey } from '../../data/env';
           <textarea id="remarks" name="remarks" rows="5" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors resize-y" placeholder="Describe the safety observation, incident, hazard, or concern in as much detail as possible — location, time, conditions, personnel involved, and immediate actions taken if any."></textarea>
         </div>
 
+        <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAADSoo23oHW_wUSEq" data-theme="light"></div>
         <button type="submit" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
           Submit Report →
         </button>
@@ -62,6 +63,13 @@ import { WEB3FORMS_OPS_KEY as web3formsKey } from '../../data/env';
     const result = document.getElementById('form-result');
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const ts = form.querySelector('[name="cf-turnstile-response"]');
+      if (!ts || !ts.value) {
+        result.textContent = 'Please wait — security check loading. Try again in a moment.';
+        result.classList.remove('hidden');
+        result.classList.add('text-red-600');
+        return;
+      }
       const btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
       btn.textContent = 'Sending...';
@@ -74,6 +82,7 @@ import { WEB3FORMS_OPS_KEY as web3formsKey } from '../../data/env';
           result.classList.remove('hidden', 'text-red-600');
           result.classList.add('text-green-600');
           form.reset();
+          if (window.turnstile) turnstile.reset();
         } else {
           throw new Error(data.message || 'Submission failed');
         }

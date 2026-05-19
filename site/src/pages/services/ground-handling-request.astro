@@ -30,7 +30,7 @@ const lang = defaultLocale;
         <input type="hidden" name="access_key" value={web3formsKey} />
         <input type="hidden" name="subject" value="Ground Handling Request via aam.com.mk" />
         <input type="hidden" name="from_name" value="AAM Ground Handling" />
-        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
 
         <!-- Aircraft Details -->
         <fieldset class="mb-6">
@@ -190,6 +190,7 @@ const lang = defaultLocale;
           </div>
         </fieldset>
 
+        <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAADSoo23oHW_wUSEq" data-theme="light"></div>
         <button type="submit" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
           Submit Request →
         </button>
@@ -204,6 +205,13 @@ const lang = defaultLocale;
     const result = document.getElementById('form-result');
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const ts = form.querySelector('[name="cf-turnstile-response"]');
+      if (!ts || !ts.value) {
+        result.textContent = 'Please wait — security check loading. Try again in a moment.';
+        result.classList.remove('hidden');
+        result.classList.add('text-red-600');
+        return;
+      }
       const btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
       btn.textContent = 'Sending...';
@@ -216,11 +224,12 @@ const lang = defaultLocale;
           result.classList.remove('hidden', 'text-red-600');
           result.classList.add('text-green-600');
           form.reset();
+          if (window.turnstile) turnstile.reset();
         } else {
           throw new Error(data.message || 'Submission failed');
         }
       } catch (err) {
-        result.textContent = 'Something went wrong. Please contact us directly at aaminfo@aam.com.mk.';
+        result.textContent = 'Something went wrong. Please contact us directly at ' + atob('YWFtaW5mb0BhYW0uY29tLm1r') + '.';
         result.classList.remove('hidden', 'text-green-600');
         result.classList.add('text-red-600');
       }

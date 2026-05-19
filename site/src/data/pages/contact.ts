@@ -22,7 +22,7 @@ export const form = {
   heading: 'Send a Message',
   submit: 'Send Message',
   success: "Thank you — we'll be in touch shortly.",
-  error: 'Something went wrong. Please try again or email aaminfo@aam.com.mk.',
+  error: 'Something went wrong. Please try again or email us.',
   avionetHint: 'For consolidation and corporate travel services, Avionet handles enquiries directly at avio.net.mk — though you are welcome to contact us here too.',
 };
 

@@ -62,6 +62,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://aam.com.
       )
     }
 
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,15 +93,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://aam.com.
   </body>
   <!-- Email obfuscation -->
   <script>
-    document.querySelectorAll('.em-link').forEach(function(el) {
+    function _em(el) {
       var u = el.getAttribute('data-u');
       var d = el.getAttribute('data-d');
       if (u && d) {
+        try { u = atob(u); } catch(e) {}
+        try { d = atob(d); } catch(e) {}
         el.setAttribute('href', 'mailto:' + u + '@' + d);
         if (!el.getAttribute('data-em-label')) {
           el.textContent = u + '@' + d;
         }
       }
-    });
+    }
+    document.querySelectorAll('.em-link').forEach(_em);
   </script>
 </html>
