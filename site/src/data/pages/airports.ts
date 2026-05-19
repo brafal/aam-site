@@ -1,12 +1,12 @@
 export const skp = {
   meta: {
     title: 'Ground Handling at Skopje Airport (SKP) | AAM Airport Services',
-    description: 'Full ground handling, ramp and passenger services at Skopje International Airport (SKP). AAM Airport Services — operating at SKP since 1995.',
+    description: 'Full ground handling, ramp and passenger services at Skopje International Airport (SKP). AAM Airport Services — operating at SKP since 1992.',
   },
   hero: {
     badge: 'SKP — Skopje International Airport',
     heading: 'Ground Handling at Skopje International Airport',
-    subtext: 'AAM has been the trusted local aviation partner at SKP since 1995. Full station management, ground handling supervision and a permanent ticket sales desk in the Arrivals Hall.',
+    subtext: 'AAM has been the trusted local aviation partner at SKP since 1992. Full station management, ground handling supervision and a permanent ticket sales desk in the Arrivals Hall.',
     cta: 'Request Operational Support',
   },
   overview: {

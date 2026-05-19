@@ -6,7 +6,7 @@ export const meta = {
 export const hero = {
   badge: 'About AAM',
   heading: '30+ Years on the Ground in Macedonia',
-  subtext: 'Founded in 1992 and operating since 1995, AAM DOOEL Skopje is Macedonia\'s most experienced aviation ground handling supervision company.',
+  subtext: 'Founded in 1992, AAM DOOEL Skopje is Macedonia\'s most experienced aviation ground handling supervision company.',
 };
 
 export const intro = {
@@ -38,7 +38,7 @@ export const group = {
   avionet: {
     name: 'Avionet DOO Skopje',
     role: 'IATA/BSP consolidator and corporate travel management',
-    desc: "Macedonia's only IATA/BSP-accredited consolidator. Supports 40+ non-IATA travel agencies with consolidator fares, BSP ticketing and back-office services.",
+    desc: "IATA-accredited travel agency and BSP consolidator. 20+ partner agencies across Macedonia, relationships spanning 15+ years. Air ticketing, consolidator and corporate travel services.",
     embs: 'EMBS (Registration Number): —',
     edb: 'EDB (Tax Identification Number): —',
     cta: 'avio.net.mk',

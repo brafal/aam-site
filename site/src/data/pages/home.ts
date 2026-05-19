@@ -1,12 +1,12 @@
 export const meta = {
   title: 'Aviation Ground Handling in Macedonia | AAM Airport Services',
-  description: 'AAM Airport Services provides ground handling, ramp, passenger, fuel and cargo services at Skopje (SKP) and Ohrid (OHD) airports. Operating since 1995.',
+  description: 'AAM Airport Services provides ground handling, ramp, passenger, fuel and cargo services at Skopje (SKP) and Ohrid (OHD) airports. Est. 1992.',
 };
 
 export const hero = {
-  badge: 'Since 1995',
+  badge: 'Since 1992',
   heading: 'Aviation Ground Handling in Macedonia',
-  subheading: 'Station management, ramp, passenger, fuel and cargo services at Skopje and Ohrid airports — since 1995.',
+  subheading: 'Station management, ramp, passenger, fuel and cargo services at Skopje and Ohrid airports — since 1992.',
   ctaPrimary: '24/7 Operational Support',
   ctaSecondary: 'Our Services',
 };
@@ -128,31 +128,30 @@ export const airportsSection = {
 
 export const avionetSection = {
   eyebrow: 'AN AAM GROUP SUBSIDIARY',
-  badge: 'IATA ACCREDITED AGENT & BSP CONSOLIDATOR',
-  heading: 'Issue Airline Tickets Without Being IATA',
-  intro: 'Beyond ground handling, AAM Group operates Macedonia\'s only IATA/BSP consolidator. Avionet is an IATA-accredited agent and BSP consolidator — enabling over 40 non-IATA travel agencies across Macedonia to issue tickets under its licence with full settlement and reporting.',
+  badge: 'IATA ACCREDITED TRAVEL AGENT',
+  heading: 'Air Ticketing & Consolidator Services',
+  intro: 'Avionet is AAM Group\'s IATA-accredited travel agency — specialising in air ticketing, complex itinerary management, and consolidator services from Skopje. Serving passengers, partner travel agencies, and corporate clients across Macedonia with personal support and transparent pricing.',
   forAgencies: {
     heading: 'For Travel Agencies',
     bullets: [
-      'Issue tickets via Avionet\'s IATA/BSP accreditation',
-      'Consolidator fares below published rates',
-      'Amadeus GDS terminals & web-based booking engine',
-      'Post-issue management — changes, cancellations, refunds',
-      'Technical support & back-office assistance',
+      'Issue tickets via Avionet\'s IATA/BSP infrastructure — no own licence, no bank guarantees',
+      'Amadeus GDS terminal for experienced agents, web-based engine for quick searches',
+      'Training, technical support, and booking assistance from a local partner',
+      '20+ partner agencies across Macedonia, relationships spanning 15+ years',
     ],
   },
   forCorporate: {
     heading: 'For Corporate Clients',
     bullets: [
-      'Corporate travel programmes & group bookings',
-      'Dedicated account management',
-      'Consolidated billing & travel reporting',
-      '24/7 emergency assistance',
+      'Dedicated travel agent assigned to your company',
+      'Flights, hotels, rent-a-car — one local partner for all business travel',
+      'Invoicing in MKD between Macedonian legal entities — no foreign payment complexity',
+      'Direct support during disruptions — real people, not a call centre',
     ],
   },
   features: [
-    { title: 'Issue Without IATA', desc: 'Sub-agents issue tickets under Avionet\'s IATA code — no own licence needed. Full inventory access with BSP settlement handled.' },
-    { title: 'GDS + Web Booking', desc: 'Amadeus terminals for experts, online booking engine for quick searches — both with post-issue management and support.' },
+    { title: 'Consolidator Network', desc: 'Non-IATA travel agencies issue tickets through Avionet\'s infrastructure — GDS access, training, and ongoing support included. No bank guarantees, no IATA complexity.' },
+    { title: 'Local Expertise, Personal Support', desc: 'Not an online-only platform. Real travel agents based in Skopje — same-day response, in-person visits, direct phone support. Built in Macedonia, for Macedonia.' },
   ],
   cta: 'Visit avio.net.mk',
 };
@@ -167,14 +166,4 @@ export const closingCta = {
   heading: 'Need Ground Handling Supervision at SKP or OHD?',
   subtext: 'Whether you\'re an airline requiring station management, a flight ops officer seeking ground support, a travel agency looking for BSP consolidator access, or a corporate client planning group travel — we\'re here to help.',
   cta: 'Request Operational Support',
-};
-
-export const contactSection = {
-  heading: 'Get in Touch',
-  cards: [
-    { label: 'Phone — 24/7', value: '+389 2 3117 009', href: 'tel:+38923117009' },
-    { label: 'Email', value: 'aaminfo@aam.com.mk', href: 'mailto:aaminfo@aam.com.mk' },
-    { label: 'Head Office', value: 'Dame Gruev 7, local 7, 1000 Skopje, Macedonia', sub: 'Mon–Fri 08:00–17:00' },
-    { label: 'Airport Desk', value: 'SKP Arrivals Hall', sub: 'During all flight operations' },
-  ],
 };

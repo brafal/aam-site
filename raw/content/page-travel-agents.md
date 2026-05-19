@@ -2,8 +2,8 @@
 
 ## Meta
 - **Page:** `/travel-agents`
-- **Title tag:** Issue Airline Tickets Without Being IATA | Avionet — AAM Group
-- **Meta description:** Avionet is Macedonia's only IATA/BSP consolidator — part of AAM Group. Issue tickets under our IATA licence, access consolidator fares and manage corporate travel. Supporting 40+ agencies across Macedonia.
+- **Title tag:** Airline Ticket Consolidation in Macedonia | Avionet — AAM Group
+- **Meta description:** Avionet is an IATA-accredited travel agency and BSP consolidator — part of AAM Group. Non-IATA travel agencies issue tickets through Avionet's infrastructure with full BSP settlement and reporting.
 
 ---
 
@@ -11,9 +11,9 @@
 
 **Badge:** For Travel Agents & Corporate Clients
 
-**Headline:** Issue Airline Tickets Without Being IATA
+**Headline:** Ticket Consolidation — Issue Tickets Without Your Own IATA Licence
 
-**Subtext:** Through Avionet — our IATA-accredited subsidiary and Macedonia's only BSP consolidator — your agency can issue tickets, access below-published fares and manage corporate accounts without holding your own IATA licence.
+**Subtext:** Through Avionet — AAM Group's IATA-accredited subsidiary and BSP consolidator — your agency can issue tickets, access Amadeus GDS, and manage bookings without holding your own IATA licence. No bank guarantees, no BSP complexity.
 
 **Button:** Visit avio.net.mk
 **Secondary:** Contact Avionet →
@@ -22,56 +22,46 @@
 
 ## The Avionet Advantage
 
-Avionet Travel Agency DOO Skopje (avio.net.mk) is an IATA-accredited agent and BSP consolidator — the only one in Macedonia. It is a majority-owned subsidiary of AAM DOOEL Skopje.
+Avionet DOO Skopje (avio.net.mk) is an IATA-accredited travel agent and BSP consolidator — part of the AAM group. Founded in 2008 and based in Skopje, Avionet specialises in air ticketing, complex itinerary management, and consolidator services.
 
-Over 40 non-IATA travel agencies across Macedonia currently issue tickets through Avionet's accreditation.
+20+ partner travel agencies across Macedonia currently issue tickets through Avionet's infrastructure, with relationships spanning 15+ years.
 
 ---
 
 ## For Travel Agencies
 
-**Headline:** Become a Sub-Agent — Issue Tickets Under Our Licence
+**Headline:** Become a Sub-Agent — Issue Tickets Through Our Infrastructure
 
-You don't need your own IATA accreditation. Issue airline tickets through Avionet's BSP with full settlement, reporting and back-office support.
+You don't need your own IATA accreditation. Issue airline tickets through Avionet with full BSP settlement, reporting, and back-office support.
 
 **What you get:**
-- Issue tickets via Avionet's IATA/BSP accreditation — no own licence needed
-- Consolidator fares below published GDS rates
-- Amadeus GDS terminals for expert users
+- Issue tickets via Avionet's IATA/BSP infrastructure — no own licence needed
+- Amadeus GDS terminal for experienced agents
 - Web-based booking engine for quick searches
 - Post-issue management — changes, cancellations, refunds
-- Technical support & back-office assistance
-- Dedicated account manager
-- Training & certification support
+- Training, technical support, and booking assistance from a local partner
+- Simple, transparent commercial model
 
 **Who this is for:**
-- Non-IATA travel agencies in Macedonia
+- Non-IATA travel agencies in Macedonia with loyal clients but without ticket-issuing infrastructure
 - New agencies not yet eligible for IATA accreditation
-- Existing agencies looking for better fares and BSP access
+- Agencies looking for a local consolidator partner with GDS access and support
 
 ---
 
 ## For Corporate Clients
 
-**Headline:** Managed Corporate Travel — Without the Overhead
+**Headline:** Managed Corporate Travel — One Local Partner
 
-Avionet manages corporate travel accounts for businesses in Macedonia — from SMEs to large organisations with regular domestic and international travel needs.
+Avionet provides business travel management for companies in Macedonia — a dedicated agent, full travel support, and invoicing in MKD between Macedonian legal entities.
 
 **What's included:**
-- Corporate travel programmes & group bookings
-- Dedicated account management
-- Consolidated billing & travel reporting
-- Amadeus GDS booking with full fare optimisation
-- 24/7 emergency assistance for travellers
-- Group travel — events, conferences, incentives
-
----
-
-## Wizz Air Ticket Sales
-
-AAM directly supports the sale of Wizz Air tickets. Get help with seat selection, baggage add-ons, group bookings and itinerary changes — with personal service, not a call center.
-
-Available at our SKP Arrivals Hall desk and via our office.
+- Dedicated travel agent assigned to your company
+- Flights — regular airlines and low-cost carriers
+- Hotels and rent-a-car, coordinated with travel
+- Support during disruptions — changes, cancellations, rebooking
+- Invoicing in MKD — no foreign payment complexity
+- Consolidated travel reporting
 
 ---
 
@@ -79,11 +69,11 @@ Available at our SKP Arrivals Hall desk and via our office.
 
 | | |
 |---|---|
-| Full name | Avionet Travel Agency DOO Skopje |
+| Full name | Avionet DOO Skopje |
 | Website | avio.net.mk |
+| Founded | 2008 |
 | IATA status | Accredited IATA agent & BSP consolidator |
-| BSP | Full settlement & reporting |
-| Sub-agents | 40+ non-IATA agencies across Macedonia |
+| Sub-agents | 20+ non-IATA agencies across Macedonia |
 | GDS | Amadeus |
 | Parent company | AAM DOOEL Skopje |
 
@@ -93,7 +83,7 @@ Available at our SKP Arrivals Hall desk and via our office.
 
 **Headline:** Ready to issue tickets without your own IATA licence?
 
-**Subtext:** Contact Avionet to discuss sub-agent access, corporate accounts or consolidator fares. Our team in Skopje handles onboarding directly.
+**Subtext:** Contact Avionet to discuss sub-agent access, corporate accounts or consolidator services. Our team in Skopje handles onboarding directly.
 
 **Button:** Visit avio.net.mk
 **Secondary button:** Contact us →

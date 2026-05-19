@@ -11,12 +11,17 @@ const lang = defaultLocale;
 <Layout title={ohd.meta.title} description={ohd.meta.description}>
   <Nav lang={lang} />
 
-  <section class="bg-surface-soft py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <span class="font-mono text-xs tracking-[0.22em] text-aam-blue font-semibold mb-4 inline-block">{ohd.hero.badge}</span>
-      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 -tracking-[0.025em] mb-3 max-w-[700px]">{ohd.hero.heading}</h1>
-      <p class="text-lg text-slate-500 max-w-[640px] mb-6">{ohd.hero.subtext}</p>
-      <a href="/services/ground-handling-request" class="inline-flex items-center gap-2 bg-aam-blue text-white px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-aam-blue-dark transition-colors">{ohd.hero.cta}</a>
+  <!-- Hero image -->
+  <section class="relative h-[380px] bg-slate-900 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/images/Ohrid-Airport.webp')"></div>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-end pb-12">
+      <div>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.22em] text-white bg-white/15 px-4 py-2 rounded-full mb-4">{ohd.hero.badge}</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white -tracking-[0.02em] mb-3 max-w-[700px]">{ohd.hero.heading}</h1>
+        <p class="text-lg text-white/80 max-w-[640px] mb-6">{ohd.hero.subtext}</p>
+        <a href="/services/ground-handling-request" class="inline-flex items-center gap-2 bg-white text-aam-blue px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-colors">{ohd.hero.cta}</a>
+      </div>
     </div>
   </section>
 

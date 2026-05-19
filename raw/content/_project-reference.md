@@ -80,10 +80,10 @@
 
 ## Avionet (subsidiary)
 
-- Macedonia's only IATA/BSP-accredited consolidator
-- Supports 40+ non-IATA travel agencies across Macedonia
-- Services: consolidator fares, BSP ticketing, corporate travel, group bookings, training
-- Also supports Wizz Air ticket sales directly
+- IATA-accredited travel agency and BSP consolidator, founded 2008
+- 20+ partner travel agencies across Macedonia, relationships spanning 15+ years
+- Services: air ticketing, complex itinerary management, consolidator services, corporate travel
+- Three audiences: direct passengers, sub-agent partners, corporate clients
 
 ## Naming Rules (important)
 

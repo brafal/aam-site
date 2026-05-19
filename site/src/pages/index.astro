@@ -5,10 +5,9 @@ import Footer from '../components/Footer.astro';
 import { stats, partners, timeline } from '../data/site';
 import {
   meta, hero, servicesOverview, aboutSection, timelineSection,
-  airportsSection, avionetSection, partnersSection, closingCta, contactSection,
+  airportsSection, avionetSection, partnersSection, closingCta,
 } from '../data/pages/home';
 import { defaultLocale } from '../data/i18n';
-import { WEB3FORMS_KEY as web3formsKey } from '../data/env';
 
 const lang = defaultLocale;
 const orgJsonLd = JSON.stringify({
@@ -341,109 +340,6 @@ const orgJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- ===== CONTACT CARDS ===== -->
-  <section class="py-12 md:py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">{contactSection.heading}</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {contactSection.cards.map(c => (
-          c.href ? (
-            <a href={c.href} class="bg-white border border-slate-200 rounded-xl p-5 text-center hover:shadow-md hover:border-aam-blue/30 transition-all">
-              <div class="text-xs font-semibold uppercase tracking-widest text-aam-blue mb-2">{c.label}</div>
-              <div class="text-[15px] font-semibold text-slate-800">{c.value}</div>
-              {c.sub && <div class="text-xs text-slate-400 mt-1">{c.sub}</div>}
-            </a>
-          ) : (
-            <div class="bg-white border border-slate-200 rounded-xl p-5 text-center">
-              <div class="text-xs font-semibold uppercase tracking-widest text-aam-blue mb-2">{c.label}</div>
-              <div class="text-[15px] font-semibold text-slate-800">{c.value}</div>
-              {c.sub && <div class="text-xs text-slate-400 mt-1">{c.sub}</div>}
-            </div>
-          )
-        ))}
-      </div>
-
-      <!-- Contact Form -->
-      <div class="mt-12 max-w-2xl mx-auto">
-        <form
-          id="contact-form"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-          class="bg-white border border-slate-200 rounded-xl p-8"
-        >
-          <input type="hidden" name="access_key" value={web3formsKey} />
-          <input type="hidden" name="subject" value="New enquiry via aam.com.mk" />
-          <input type="hidden" name="from_name" value="AAM Website" />
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
-
-          <div class="grid sm:grid-cols-2 gap-4 mb-4">
-            <div>
-              <label for="name" class="block text-sm font-semibold text-slate-700 mb-1.5">Name *</label>
-              <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" placeholder="Your name" />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email *</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" placeholder="you@example.com" />
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <label for="reason" class="block text-sm font-semibold text-slate-700 mb-1.5">I'm interested in</label>
-            <select id="reason" name="reason" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
-              <option value="">Select an option</option>
-              <option value="ground-handling">Ground Handling Supervision</option>
-              <option value="airline-partnership">Airline Partnership</option>
-              <option value="ticket-consolidation">Ticket Consolidation (Avionet)</option>
-              <option value="fuel-services">Fuel Arrangements</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="mb-5">
-            <label for="message" class="block text-sm font-semibold text-slate-700 mb-1.5">Message *</label>
-            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors resize-y" placeholder="How can we help?"></textarea>
-          </div>
-
-          <button type="submit" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
-            Send Message →
-          </button>
-
-          <p id="form-result" class="hidden mt-4 text-sm font-medium"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Web3Forms handler -->
-  <script>
-    const form = document.getElementById('contact-form');
-    const result = document.getElementById('form-result');
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      result.classList.add('hidden');
-      try {
-        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
-        const data = await res.json();
-        if (data.success) {
-          result.textContent = 'Thank you — your message has been sent. We\'ll get back to you shortly.';
-          result.classList.remove('hidden', 'text-red-600');
-          result.classList.add('text-green-600');
-          form.reset();
-        } else {
-          throw new Error(data.message || 'Submission failed');
-        }
-      } catch (err) {
-        result.textContent = 'Something went wrong. Please email us directly at aaminfo@aam.com.mk.';
-        result.classList.remove('hidden', 'text-green-600');
-        result.classList.add('text-red-600');
-      }
-      btn.disabled = false;
-      btn.textContent = 'Send Message →';
-    });
-  </script>
 
   <Footer lang={lang} />
 </Layout>

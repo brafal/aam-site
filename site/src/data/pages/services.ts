@@ -17,7 +17,7 @@ export const index = {
 export const aamServices = [
   {
     name: 'Ground Handling',
-    desc: 'Aircraft ground handling and station management at Skopje and Ohrid airports. Ramp services, aircraft turnaround and supervision since 1995.',
+    desc: 'Aircraft ground handling and station management at Skopje and Ohrid airports. Ramp services, aircraft turnaround and supervision since 1992.',
     href: '/services/ground-handling',
     provider: 'AAM Airport DOO',
   },
@@ -35,7 +35,7 @@ export const aamServices = [
   },
   {
     name: 'Cargo & Logistics',
-    desc: 'Cargo handling and airside logistics coordination at SKP and OHD airports. Ground handling support since 1995.',
+    desc: 'Cargo handling and airside logistics coordination at SKP and OHD airports. Ground handling support since 1992.',
     href: '/services/cargo-logistics',
     provider: 'AAM Airport DOO',
   },
@@ -44,13 +44,13 @@ export const aamServices = [
 export const avionetServices = [
   {
     name: 'Ticket Consolidation',
-    desc: 'IATA/BSP ticket consolidation for non-IATA travel agencies in Macedonia. Avionet DOO — the only IATA/BSP consolidator in the country.',
+    desc: 'IATA/BSP ticket consolidation for non-IATA travel agencies in Macedonia. Issue tickets through Avionet\'s infrastructure — no own licence needed.',
     href: '/services/ticket-consolidation',
     provider: 'Avionet DOO Skopje',
   },
   {
     name: 'Corporate Travel',
-    desc: 'Business travel management for corporate clients in Macedonia. Policy compliance, reporting and account management.',
+    desc: 'Business travel management for companies in Macedonia. Dedicated agent, full travel support, and invoicing in MKD.',
     href: '/services/corporate-travel',
     provider: 'Avionet DOO Skopje',
   },
@@ -60,7 +60,8 @@ export const avionetServices = [
 export const groundHandling = {
   meta: {
     title: 'Ground Handling Services at SKP & OHD | AAM Airport Services',
-    description: 'Aircraft ground handling and station management at Skopje and Ohrid airports. Ramp services, aircraft turnaround and supervision since 1995.',
+    description: 'Aircraft ground handling and station management at Skopje and Ohrid airports. Ramp services, aircraft turnaround and supervision since 1992.',
+
   },
   hero: {
     heading: 'Ground Handling',
@@ -141,7 +142,7 @@ export const fuelServices = {
 export const cargoLogistics = {
   meta: {
     title: 'Cargo & Logistics Handling | AAM Airport Services Macedonia',
-    description: 'Cargo handling and airside logistics coordination at Skopje (SKP) and Ohrid (OHD) airports. Reliable ground handling since 1995.',
+    description: 'Cargo handling and airside logistics coordination at Skopje (SKP) and Ohrid (OHD) airports. Reliable ground handling since 1992.',
   },
   hero: {
     heading: 'Cargo & Logistics',
@@ -168,53 +169,51 @@ export const cargoLogistics = {
 export const ticketConsolidation = {
   meta: {
     title: 'Airline Ticket Consolidation in Macedonia | Avionet via AAM Group',
-    description: 'IATA/BSP ticket consolidation for non-IATA travel agencies in Macedonia. Avionet DOO — the only IATA/BSP consolidator in the country.',
+    description: 'Avionet is an IATA-accredited travel agency and BSP consolidator — part of AAM Group. Non-IATA travel agencies issue tickets through Avionet\'s infrastructure with full BSP settlement and reporting.',
   },
   hero: {
     heading: 'Ticket Consolidation',
     providerLine: 'Delivered by Avionet DOO Skopje — part of AAM Group',
-    intro: 'Avionet is Macedonia\'s only IATA/BSP-accredited consolidator. Non-IATA travel agencies can issue airline tickets under Avionet\'s licence with full BSP settlement and reporting.',
+    intro: 'Avionet is an IATA-accredited travel agency and BSP consolidator. Non-IATA travel agencies can issue airline tickets through Avionet\'s infrastructure — no own licence, no bank guarantees, no BSP complexity.',
   },
   body: {
     heading: 'What Sub-Agents Get',
     items: [
-      'Issue airline tickets under Avionet\'s IATA/BSP accreditation',
-      'Access consolidator fares below published GDS rates',
-      'Amadeus GDS terminals for expert users',
+      'Issue tickets via Avionet\'s IATA/BSP infrastructure — no own licence needed',
+      'Amadeus GDS terminal for experienced agents',
       'Web-based booking engine for quick searches',
       'Post-issue management — changes, cancellations, refunds',
-      'Technical support & back-office assistance',
-      'Dedicated account manager',
-      'Training & certification support',
+      'Training, technical support, and booking assistance from a local partner',
+      'Simple, transparent commercial model',
     ],
     whoForHeading: 'Who This Is For',
-    whoForText: 'Non-IATA travel agencies in Macedonia, new agencies not yet eligible for IATA accreditation, and existing agencies looking for better fares and BSP access.',
+    whoForText: 'Non-IATA travel agencies in Macedonia with loyal clients but without the infrastructure to issue tickets directly. Also suitable for new agencies not yet eligible for IATA accreditation.',
   },
 };
 
 export const corporateTravel = {
   meta: {
     title: 'Corporate Travel Management in Macedonia | Avionet via AAM Group',
-    description: 'Business travel management for corporate clients in Macedonia. Policy compliance, reporting and account management via Avionet DOO Skopje.',
+    description: 'Business travel management for companies in Macedonia. Dedicated agent, full travel support, and invoicing in MKD — via Avionet DOO Skopje, part of AAM Group.',
   },
   hero: {
     heading: 'Corporate Travel',
     providerLine: 'Delivered by Avionet DOO Skopje — part of AAM Group',
-    intro: 'Managed corporate travel for businesses in Macedonia. Avionet handles policy compliance, consolidated billing, reporting and account management — from SMEs to large organisations.',
+    intro: 'A dedicated travel partner for Macedonian companies. Avionet handles flights, hotels, rent-a-car, and support during disruptions — with invoicing in MKD between Macedonian legal entities.',
   },
   body: {
     heading: 'What\'s Included',
     items: [
-      'Corporate travel programmes & group bookings',
-      'Dedicated account management',
-      'Consolidated billing & travel reporting',
-      'Amadeus GDS booking with full fare optimisation',
-      '24/7 emergency assistance for travellers',
-      'Group travel — events, conferences, incentives',
-      'Policy compliance monitoring',
-      'Cost-saving fare recommendations',
+      'Dedicated travel agent assigned to your company',
+      'Flights — regular airlines and low-cost carriers',
+      'Hotels and rent-a-car, coordinated with travel',
+      'Support during disruptions — changes, cancellations, rebooking',
+      'Invoicing in MKD — no foreign payment complexity',
+      'Travel management software option for companies preferring self-service',
+      'Consolidated travel reporting',
+      'Direct support — real people, not a call centre',
     ],
     whoForHeading: 'Who This Is For',
-    whoForText: 'Businesses in Macedonia with regular domestic and international travel — from SMEs to large organisations.',
+    whoForText: 'Medium to large Macedonian companies with employees who travel regularly for business — currently managing travel manually or seeking a structured, local solution.',
   },
 };
