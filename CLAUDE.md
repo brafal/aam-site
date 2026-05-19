@@ -11,7 +11,7 @@ A website for **AAM AIRPORT DOO Skopje** (aam.com.mk) — a Macedonian aviation 
 
 AAM AIRPORT DOO Skopje is the operating company under the parent **AAM DOOEL Skopje**.
 
-The site is built with **Astro 4 + Tailwind CSS 3 + Lucide Astro** (same stack as the Avionet project). Source code lives in `site/src/`. Build output goes to `site/dist/`.
+The site is built with **Astro 4 + Tailwind CSS 3 + @lucide/astro** (same stack as the Avionet project). Source code lives in `site/src/`. Build output goes to `site/dist/`.
 
 - `npm run dev` — start dev server (from inside `site/`)
 - `npm run build` — production build to `site/dist/`
@@ -60,17 +60,26 @@ Raw asset files live in `../aam-assets/` at the repo root. These are unoptimized
 ## Site Structure & Page Map
 
 ```
-/                    → Homepage (page-home.md)
-/services            → Services (page-services.md)
-/airports/skp        → Skopje Airport (page-airport-skp.md)
-/airports/ohd        → Ohrid Airport (page-airport-ohd.md)
-/airlines            → For Airlines (page-for-airlines.md)
-/travel-agents       → For Travel Agents (page-travel-agents.md)
-/about               → About (page-about.md)
-/contact             → Contact (page-contact.md)
+/                                    → Homepage (index.astro)
+/services                            → Services overview (services.astro)
+/services/ground-handling            → Ground Handling (ground-handling.astro)
+/services/ground-handling-request    → Ground Handling Request Form (ground-handling-request.astro)
+/services/passenger-services         → Passenger Services
+/services/fuel-services              → Fuel Services
+/services/cargo-logistics            → Cargo & Logistics
+/services/ticket-consolidation       → Ticket Consolidation
+/services/corporate-travel           → Corporate Travel
+/airports/skp                        → Skopje Airport (airports/skp.astro)
+/airports/ohd                        → Ohrid Airport (airports/ohd.astro)
+/about                               → About (about.astro)
+/contact                             → Contact (contact.astro)
+/ops/supervision-report              → Supervision Report (hidden — no nav, not in sitemap)
+/ops/safety-report                   → Safety Report (hidden — no nav, not in sitemap)
 ```
 
 No separate Partners page. The logo section on the homepage is sufficient.
+
+**Ops pages** (`/ops/*`) are intentionally hidden: no navigation links, excluded from `sitemap.xml.ts`, and use `WEB3FORMS_OPS_KEY` for email routing to internal ops.
 
 ---
 
@@ -84,6 +93,35 @@ Right side of nav: phone number + **[24/7 Support]** button (solid filled, dark 
 
 "For Travel Agents & Companies" from the old nav is now shortened to **Travel Agents**.
 "Partners" has been removed from the nav — it lives in the footer only.
+
+---
+
+## Forms
+
+All forms submit via **Web3Forms** (`https://api.web3forms.com/submit`). Every form includes honeypot spam protection (`botcheck` hidden checkbox) and client-side JS for async submission with success/error feedback.
+
+### Form styling conventions
+- Container: `bg-white border border-slate-200 rounded-xl p-8`
+- Inputs/selects: `w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors`
+- Labels: `block text-sm font-semibold text-slate-700 mb-1.5`
+- Submit button: `inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors`
+- Fieldset legend: `text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full`
+
+### Form pages
+
+| Page | URL | Key | Notes |
+|---|---|---|---|
+| Contact form | `/` (homepage, bottom) | `PUBLIC_WEB3FORMS_KEY` | Name, email, interest dropdown, message |
+| Ground Handling Request | `/services/ground-handling-request` | `PUBLIC_WEB3FORMS_KEY` | Full aircraft details, arrival/departure, 11 service checkboxes, contact info. Intro letter from ops team at top. |
+| Supervision Report | `/ops/supervision-report` | `PUBLIC_WEB3FORMS_OPS_KEY` | Hidden ops form — supervisor details, flight info, services provided, quality, charges, MVT routing |
+| Safety Report | `/ops/safety-report` | `PUBLIC_WEB3FORMS_OPS_KEY` | Hidden ops form — supervisor name, date, reporting type dropdown, mandatory remarks |
+
+### Environment variables
+- `site/.env.local` (gitignored) — copy from `site/.env.local.example`
+- `PUBLIC_WEB3FORMS_KEY` — main contact and ground handling form submissions
+- `PUBLIC_WEB3FORMS_OPS_KEY` — ops/internal form submissions (supervision report, safety report)
+- `PUBLIC_GA_ID` — Google Analytics 4 measurement ID
+- Env access is centralized in `site/src/data/env.ts` — import from there, never use `import.meta.env` directly in other files (avoids Vite chunk-splitting bug in dev mode)
 
 ---
 
@@ -141,22 +179,22 @@ If something seems missing, check `content/_project-reference.md` before asking.
 
 ### P1 — Fix before launch
 1. **Typos in service cards** — search and fix: "rellability", "supervition", "liarsing", "Stabon", "Blaggage"
-2. **CTA button styling** — hero "24/7 Operational Support" must be solid filled, not ghost. Same for closing banner "Request Operational Support"
-3. **Hero subtext** — replace the comma-list sentence with: *"When an airline operates at SKP or OHD, AAM is on the ground — supervising handlers, managing irregularities, and keeping every turnaround on schedule."*
-4. **"North Macedonia"** — remove from About section body copy and anywhere else it appears. Replace with "Macedonia"
+2. **CTA button styling** — fixed: hero and closing banner both use solid filled buttons
+3. **Hero subtext** — fixed: replaced with operations-focused sentence
+4. **"North Macedonia"** — fixed: removed from all content, replaced with "Macedonia"
 5. **WhatsApp** — add WhatsApp link to header next to phone: wa.me/38923117009
 
 ### P2 — High impact
-6. **Service cards tagline** — replace "Precision, reliability and decades of expertise — at every gate, every flight, every time" with: *"AAM supervises third-party ground handlers on behalf of airlines — local expertise, on-ground accountability, every flight."*
-7. **Service cards layout** — fix 3+2 asymmetric grid (two orphaned cards on bottom row). Make it 3+3 or 2+2+2
-8. **Remove blue inline hyperlinks** from service card body text — these look like unstyled anchor tags
-9. **"4 Countries Served" stat** — add a sub-label listing the countries: Macedonia, Albania, Serbia, Montenegro (or replace with a stronger metric if agreed)
-10. **Mid-page CTA** — ensure it uses a solid filled button, not ghost
-11. **AvioNet section** — add bridging sentence above it: *"Beyond ground handling, AAM Group operates Macedonia's only IATA/BSP consolidator."*
-12. **Timeline** — reduce vertical spacing between nodes by ~30%. Content is good, scroll distance is too long.
+6. **Service cards tagline** — fixed: replaced with AAM-specific tagline
+7. **Service cards layout** — fixed: merged into single 3-col grid with equal heights
+8. **Remove blue inline hyperlinks** — fixed: service cards use text links now
+9. **"4 Countries Served" stat** — fixed: sub-label lists Macedonia, Albania, Serbia, Montenegro
+10. **Mid-page CTA** — fixed: uses solid filled button
+11. **AvioNet section** — fixed: bridging sentence added above Avionet section
+12. **Timeline** — fixed: reduced vertical spacing between nodes
 
 ### P3 — Polish
-13. **WorldFuel logo card** — add date range to match all other partner cards
+13. **WorldFuel logo card** — fixed: date range "2015–present" added to all partner cards
 14. **Footer** — add more internal padding between columns, reduce visual heaviness
 15. **Mobile** — test breakpoints for: 3-col service grid, 4-col logo grid, 2-col AvioNet layout, timeline, contact maps
 
@@ -183,3 +221,4 @@ The Avionet section on the homepage and the `/travel-agents` page are the main t
 - Do not rewrite content that hasn't been flagged for change — the MD files are approved
 - Do not use ghost buttons as primary CTAs on dark backgrounds
 - Do not put more than 3 bullet points in a service card
+- Do not use `import.meta.env` directly in `.astro` files — import from `site/src/data/env.ts` instead (avoids Vite dev-mode chunk-splitting bug)

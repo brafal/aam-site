@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { WEB3FORMS_OPS_KEY as web3formsKey } from '../../data/env';
+---
+
+<Layout title="Safety Report — AAM Ops" description="Internal safety report form">
+  <div class="min-h-screen bg-surface-soft py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="mb-8">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          AAM Operations
+        </span>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-2">Safety Report</h1>
+        <p class="text-base text-slate-500">Report a safety observation, incident, or concern. All submissions are handled confidentially per AAM safety management procedures.</p>
+      </div>
+
+      <form id="ops-form" action="https://api.web3forms.com/submit" method="POST" class="bg-white border border-slate-200 rounded-xl p-8">
+        <input type="hidden" name="access_key" value={web3formsKey} />
+        <input type="hidden" name="subject" value="Safety Report — AAM Ops" />
+        <input type="hidden" name="from_name" value="AAM Ops — Safety Report" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="supervisor_name" class="block text-sm font-semibold text-slate-700 mb-1.5">Supervisor's Name</label>
+            <input type="text" id="supervisor_name" name="supervisor_name" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+          </div>
+          <div>
+            <label for="report_date" class="block text-sm font-semibold text-slate-700 mb-1.5">Date</label>
+            <input type="date" id="report_date" name="report_date" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="reporting_type" class="block text-sm font-semibold text-slate-700 mb-1.5">Reporting Type *</label>
+          <select id="reporting_type" name="reporting_type" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
+            <option value="">Select reporting type</option>
+            <option value="anonymous">Anonymous</option>
+            <option value="confidential">Confidential</option>
+            <option value="identified-non-punitive">Identified — Non-Punitive</option>
+            <option value="punitive-mandatory">Punitive & Mandatory</option>
+            <option value="voluntary">Voluntary</option>
+          </select>
+        </div>
+
+        <div class="mb-6">
+          <label for="remarks" class="block text-sm font-semibold text-slate-700 mb-1.5">Remark / Description *</label>
+          <textarea id="remarks" name="remarks" rows="5" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors resize-y" placeholder="Describe the safety observation, incident, hazard, or concern in as much detail as possible — location, time, conditions, personnel involved, and immediate actions taken if any."></textarea>
+        </div>
+
+        <button type="submit" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
+          Submit Report →
+        </button>
+        <p id="form-result" class="hidden mt-4 text-sm font-medium"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Web3Forms handler -->
+  <script>
+    const form = document.getElementById('ops-form');
+    const result = document.getElementById('form-result');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      result.classList.add('hidden');
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await res.json();
+        if (data.success) {
+          result.textContent = 'Safety report submitted — thank you.';
+          result.classList.remove('hidden', 'text-red-600');
+          result.classList.add('text-green-600');
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        result.textContent = 'Submission error. Please try again or report directly to your supervisor.';
+        result.classList.remove('hidden', 'text-green-600');
+        result.classList.add('text-red-600');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Submit Report →';
+    });
+  </script>
+</Layout>

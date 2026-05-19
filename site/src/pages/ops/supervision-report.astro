@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { WEB3FORMS_OPS_KEY as web3formsKey } from '../../data/env';
+---
+
+<Layout title="Supervision Report — AAM Ops" description="Internal supervision report form">
+  <div class="min-h-screen bg-surface-soft py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="mb-8">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          AAM Operations
+        </span>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-2">Supervision Report</h1>
+        <p class="text-base text-slate-500">Submit a supervision report for flight operations at SKP or OHD.</p>
+      </div>
+
+      <form id="ops-form" action="https://api.web3forms.com/submit" method="POST" class="bg-white border border-slate-200 rounded-xl p-8">
+        <input type="hidden" name="access_key" value={web3formsKey} />
+        <input type="hidden" name="subject" value="Supervision Report — AAM Ops" />
+        <input type="hidden" name="from_name" value="AAM Ops — Supervision Report" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+        <!-- Supervisor & Flight Details -->
+        <fieldset class="mb-6">
+          <legend class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full">Flight & Supervisor Details</legend>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="supervisor_name" class="block text-sm font-semibold text-slate-700 mb-1.5">Supervisor's Name *</label>
+              <input type="text" id="supervisor_name" name="supervisor_name" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+            </div>
+            <div>
+              <label for="dep_airport" class="block text-sm font-semibold text-slate-700 mb-1.5">Departure Airport *</label>
+              <select id="dep_airport" name="dep_airport" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
+                <option value="">Select airport</option>
+                <option value="SKP">SKP — Skopje</option>
+                <option value="OHD">OHD — Ohrid</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="operator" class="block text-sm font-semibold text-slate-700 mb-1.5">Operator *</label>
+              <input type="text" id="operator" name="operator" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" placeholder="Airline or operator" />
+            </div>
+            <div>
+              <label for="aircraft_reg" class="block text-sm font-semibold text-slate-700 mb-1.5">Aircraft Registration</label>
+              <input type="text" id="aircraft_reg" name="aircraft_reg" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" placeholder="e.g. 9A-BTC" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Arrival / Departure -->
+        <fieldset class="mb-6">
+          <legend class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full">Arrival & Departure</legend>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="arr_date" class="block text-sm font-semibold text-slate-700 mb-1.5">Arrival Date *</label>
+              <input type="date" id="arr_date" name="arr_date" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+            </div>
+            <div>
+              <label for="arr_time_utc" class="block text-sm font-semibold text-slate-700 mb-1.5">Arrival Time UTC</label>
+              <input type="time" id="arr_time_utc" name="arr_time_utc" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="dep_date" class="block text-sm font-semibold text-slate-700 mb-1.5">Departure Date *</label>
+              <input type="date" id="dep_date" name="dep_date" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+            </div>
+            <div>
+              <label for="dep_time_utc" class="block text-sm font-semibold text-slate-700 mb-1.5">Departure Time UTC</label>
+              <input type="time" id="dep_time_utc" name="dep_time_utc" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Services Provided -->
+        <fieldset class="mb-6">
+          <legend class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full">Services Provided</legend>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {['Supervision', 'Hotel', 'Transfer', 'Catering', 'Lounge', 'Security Charges'].map(svc => (
+              <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                <input type="checkbox" name="services_provided" value={svc} class="w-4 h-4 rounded border-slate-300 text-aam-blue focus:ring-aam-blue/20" />
+                {svc}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <!-- Quality & Charges -->
+        <fieldset class="mb-6">
+          <legend class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full">Quality, Charges & MVT</legend>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Quality *</label>
+              <div class="flex gap-6">
+                <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                  <input type="radio" name="quality" value="yes" required class="w-4 h-4 border-slate-300 text-aam-blue focus:ring-aam-blue/20" /> Yes
+                </label>
+                <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                  <input type="radio" name="quality" value="no" class="w-4 h-4 border-slate-300 text-aam-blue focus:ring-aam-blue/20" /> No
+                </label>
+              </div>
+            </div>
+            <div>
+              <label for="mvt_sent_to" class="block text-sm font-semibold text-slate-700 mb-2">MVT Sent To</label>
+              <select id="mvt_sent_to" name="mvt_sent_to" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
+                <option value="">Select</option>
+                <option value="DXBJX7X">DXBJX7X</option>
+                <option value="SITA">SITA</option>
+                <option value="AFTN">AFTN</option>
+                <option value="Email">Email</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="airport_charge" class="block text-sm font-semibold text-slate-700 mb-2">Airport Charge</label>
+              <select id="airport_charge" name="airport_charge" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
+                <option value="">Select</option>
+                <option value="cash">Cash</option>
+                <option value="invoice">Invoice</option>
+              </select>
+            </div>
+            <div>
+              <label for="fuel" class="block text-sm font-semibold text-slate-700 mb-2">Fuel</label>
+              <select id="fuel" name="fuel" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
+                <option value="">Select</option>
+                <option value="cash">Cash</option>
+                <option value="invoice">Invoice</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Remarks -->
+        <fieldset class="mb-6">
+          <legend class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full">Remarks</legend>
+          <div>
+            <label for="remarks" class="block text-sm font-semibold text-slate-700 mb-1.5">Remark / Other Services</label>
+            <textarea id="remarks" name="remarks" rows="3" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors resize-y" placeholder="Additional notes, irregularities, or services not listed above"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
+          Submit Report →
+        </button>
+        <p id="form-result" class="hidden mt-4 text-sm font-medium"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Web3Forms handler -->
+  <script>
+    const form = document.getElementById('ops-form');
+    const result = document.getElementById('form-result');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      result.classList.add('hidden');
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await res.json();
+        if (data.success) {
+          result.textContent = 'Report submitted — thank you.';
+          result.classList.remove('hidden', 'text-red-600');
+          result.classList.add('text-green-600');
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        result.textContent = 'Submission error. Please try again or contact ops directly.';
+        result.classList.remove('hidden', 'text-green-600');
+        result.classList.add('text-red-600');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Submit Report →';
+    });
+  </script>
+</Layout>
