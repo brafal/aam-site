@@ -37,6 +37,16 @@ const lang = defaultLocale;
           <legend class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 w-full">Aircraft Details</legend>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
+              <label for="request_status" class="block text-sm font-semibold text-slate-700 mb-1.5">Status of Request *</label>
+              <select id="request_status" name="request_status" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors">
+                <option value="">Select status</option>
+                <option value="new">New</option>
+                <option value="revised">Revised</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+            <div>
+            <div>
               <label for="registration" class="block text-sm font-semibold text-slate-700 mb-1.5">Registration *</label>
               <input type="text" id="registration" name="registration" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-aam-blue/20 focus:border-aam-blue transition-colors" placeholder="e.g. 9A-BTC" />
             </div>
@@ -66,6 +76,10 @@ const lang = defaultLocale;
                 <option value="">Select category</option>
                 <option value="private">Private</option>
                 <option value="commercial">Commercial</option>
+                <option value="medical">Medical</option>
+                <option value="tech_stop">Tech Stop</option>
+                <option value="government">Government</option>
+                <option value="military">Military</option>
               </select>
             </div>
           </div>

@@ -1,6 +1,6 @@
 export const meta = {
   title: 'About AAM — Aviation Group Since 1992 | Macedonia',
-  description: 'AAM DOOEL Skopje is a Macedonian aviation group founded in 1992, parent of AAM Airport Services DOO and Avionet DOO Skopje.',
+  description: 'AAM DOOEL Skopje is a Macedonian aviation group founded in 1992, parent of AAM Airport DOO and Avionet DOO Skopje.',
 };
 
 export const hero = {
@@ -23,20 +23,24 @@ export const group = {
     name: 'AAM DOOEL Skopje',
     role: 'Parent holding company',
     address: 'Dame Gruev 7, local 7, 1000 Skopje, Macedonia',
-    embs: 'EMBS: 6880347',
-    edb: 'EDB: 4080013537923',
+    embs: 'EMBS (Registration Number): 6880347',
+    edb: 'EDB (Tax Identification Number): 4080013537923',
     activity: '52.23 — Service activities incidental to air transportation',
   },
   aamAirport: {
-    name: 'AAM Airport Services DOO',
+    name: 'AAM Airport DOO',
     role: 'Ground handling operations subsidiary',
     desc: 'Ground handling, ramp supervision, passenger services, fuel coordination and cargo logistics at SKP and OHD.',
+    embs: 'EMBS (Registration Number): —',
+    edb: 'EDB (Tax Identification Number): —',
     cta: 'View Services',
   },
   avionet: {
     name: 'Avionet DOO Skopje',
     role: 'IATA/BSP consolidator and corporate travel management',
     desc: "Macedonia's only IATA/BSP-accredited consolidator. Supports 40+ non-IATA travel agencies with consolidator fares, BSP ticketing and back-office services.",
+    embs: 'EMBS (Registration Number): —',
+    edb: 'EDB (Tax Identification Number): —',
     cta: 'avio.net.mk',
   },
 };

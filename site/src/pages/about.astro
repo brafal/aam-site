@@ -40,25 +40,33 @@ const lang = defaultLocale;
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col">
           <h3 class="text-xl font-bold text-slate-900 mb-1">{group.aamDoel.name}</h3>
-          <p class="text-[11px] tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.aamDoel.role}</p>
-          <div class="space-y-1.5 text-sm text-slate-500 mb-6">
+          <p class="text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.aamDoel.role}</p>
+          <div class="space-y-1.5 text-base text-slate-500 mb-6">
             <p>{group.aamDoel.address}</p>
-            <p class="font-mono text-[12px] text-slate-400">{group.aamDoel.embs}</p>
-            <p class="font-mono text-[12px] text-slate-400">{group.aamDoel.edb}</p>
-            <p class="font-mono text-[12px] text-slate-400">{group.aamDoel.activity}</p>
+            <p class="font-mono text-sm text-slate-400">{group.aamDoel.embs}</p>
+            <p class="font-mono text-sm text-slate-400">{group.aamDoel.edb}</p>
+            <p class="font-mono text-sm text-slate-400">{group.aamDoel.activity}</p>
           </div>
         </div>
         <div class="bg-aam-blue text-white rounded-xl p-7 flex flex-col">
           <h3 class="text-xl font-bold text-white mb-1">{group.aamAirport.name}</h3>
-          <p class="text-[11px] tracking-[0.14em] text-aam-gold uppercase font-semibold font-mono mb-4">{group.aamAirport.role}</p>
-          <p class="text-sm text-white/70 leading-relaxed mb-6">{group.aamAirport.desc}</p>
-          <a href="/services" class="mt-auto inline-flex items-center gap-2 text-aam-gold font-semibold text-sm hover:underline">{group.aamAirport.cta} →</a>
+          <p class="text-xs tracking-[0.14em] text-aam-gold uppercase font-semibold font-mono mb-4">{group.aamAirport.role}</p>
+          <div class="space-y-1.5 text-base text-white/70 leading-relaxed mb-6">
+            <p>{group.aamAirport.desc}</p>
+            <p class="font-mono text-sm text-white/50">{group.aamAirport.embs}</p>
+            <p class="font-mono text-sm text-white/50">{group.aamAirport.edb}</p>
+          </div>
+          <a href="/services" class="mt-auto inline-flex items-center gap-2 text-aam-gold font-semibold text-base hover:underline">{group.aamAirport.cta} →</a>
         </div>
         <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col">
           <h3 class="text-xl font-bold text-slate-900 mb-1">{group.avionet.name}</h3>
-          <p class="text-[11px] tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.avionet.role}</p>
-          <p class="text-sm text-slate-500 leading-relaxed mb-6">{group.avionet.desc}</p>
-          <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-aam-blue font-semibold text-sm hover:underline">{group.avionet.cta} ↗</a>
+          <p class="text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.avionet.role}</p>
+          <div class="space-y-1.5 text-base text-slate-500 leading-relaxed mb-6">
+            <p>{group.avionet.desc}</p>
+            <p class="font-mono text-sm text-slate-400">{group.avionet.embs}</p>
+            <p class="font-mono text-sm text-slate-400">{group.avionet.edb}</p>
+          </div>
+          <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-aam-blue font-semibold text-base hover:underline">{group.avionet.cta} ↗</a>
         </div>
       </div>
     </div>
@@ -89,9 +97,9 @@ const lang = defaultLocale;
           <div class={`flex flex-col md:flex-row items-start ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
             <div class={`hidden md:flex w-1/2 ${i % 2 === 0 ? 'justify-end pr-8' : 'pl-8'}`}>
               <div class={`bg-white/5 border border-white/10 rounded-xl p-5 max-w-[340px] backdrop-blur-sm hover:bg-white/8 transition-colors ${i % 2 === 0 ? 'text-right' : ''}`}>
-                <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-1">{event.period}</span>
-                <h4 class="text-lg font-bold text-white mb-1.5">{event.title}</h4>
-                <p class="text-[13px] text-white/70 leading-relaxed">{event.text}</p>
+                <span class="text-sm text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-1">{event.period}</span>
+                <h4 class="text-xl font-bold text-white mb-1.5">{event.title}</h4>
+                <p class="text-sm text-white/70 leading-relaxed">{event.text}</p>
               </div>
             </div>
             <div class="hidden md:flex relative w-0 justify-center">
@@ -101,7 +109,7 @@ const lang = defaultLocale;
               <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
               <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-2">{event.period}</span>
               <h4 class="text-lg font-bold text-white mb-1.5">{event.title}</h4>
-              <p class="text-[13px] text-white/70 leading-relaxed">{event.text}</p>
+              <p class="text-sm text-white/70 leading-relaxed">{event.text}</p>
             </div>
             <div class="hidden md:block w-1/2"></div>
           </div>

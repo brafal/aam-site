@@ -205,7 +205,7 @@ If something seems missing, check `content/_project-reference.md` before asking.
 - **AAM DOOEL Skopje** — parent holding company
 - **AAM AIRPORT DOO Skopje** — operating company, ground handling & aviation services (this website)
 - **Avionet Travel Agency DOO Skopje** (avio.net.mk) — IATA/BSP consolidator, subsidiary
-- **AAM Airport Services DOO** — part of the group
+- **AAM Airport DOO** — part of the group, ground handling operations subsidiary
 
 The Avionet section on the homepage and the `/travel-agents` page are the main touchpoints for the travel agency audience. Always link to avio.net.mk for the full Avionet experience.
 

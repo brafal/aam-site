@@ -14,7 +14,7 @@ export const navLinks = [
   },
   {
     label: 'Airports',
-    path: '/airports',
+    path: '/airports/skp',
     children: [
       { label: 'Skopje — SKP', path: '/airports/skp' },
       { label: 'Ohrid — OHD', path: '/airports/ohd' },

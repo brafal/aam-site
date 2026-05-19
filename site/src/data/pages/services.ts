@@ -10,7 +10,7 @@ export const hero = {
 };
 
 export const index = {
-  intro: 'AAM Airport Services DOO provides ground handling, passenger services, fuel coordination and cargo logistics at Skopje and Ohrid airports. Below are the services we deliver directly, followed by services available through our subsidiary Avionet DOO Skopje.',
+  intro: 'AAM Airport DOO provides ground handling, passenger services, fuel coordination and cargo logistics at Skopje and Ohrid airports. Below are the services we deliver directly, followed by services available through our subsidiary Avionet DOO Skopje.',
   avionetNote: 'Delivered via Avionet DOO Skopje',
 };
 
@@ -19,25 +19,25 @@ export const aamServices = [
     name: 'Ground Handling',
     desc: 'Aircraft ground handling and station management at Skopje and Ohrid airports. Ramp services, aircraft turnaround and supervision since 1995.',
     href: '/services/ground-handling',
-    provider: 'AAM Airport Services DOO',
+    provider: 'AAM Airport DOO',
   },
   {
     name: 'Passenger Services',
     desc: 'Check-in, boarding, special assistance and VIP passenger handling at Skopje International Airport and Ohrid Airport.',
     href: '/services/passenger-services',
-    provider: 'AAM Airport Services DOO',
+    provider: 'AAM Airport DOO',
   },
   {
     name: 'Fuel Services',
     desc: 'Fuel supply coordination, refuelling supervision and into-plane fuelling services at Skopje and Ohrid airports.',
     href: '/services/fuel-services',
-    provider: 'AAM Airport Services DOO',
+    provider: 'AAM Airport DOO',
   },
   {
     name: 'Cargo & Logistics',
     desc: 'Cargo handling and airside logistics coordination at SKP and OHD airports. Ground handling support since 1995.',
     href: '/services/cargo-logistics',
-    provider: 'AAM Airport Services DOO',
+    provider: 'AAM Airport DOO',
   },
 ];
 
@@ -64,7 +64,7 @@ export const groundHandling = {
   },
   hero: {
     heading: 'Ground Handling',
-    providerLine: 'Delivered by AAM Airport Services DOO',
+    providerLine: 'Delivered by AAM Airport DOO',
     intro: 'Full aircraft ground handling supervision at Skopje (SKP) and Ohrid (OHD) airports. We coordinate third-party ground handlers on behalf of the airline to ensure safe, compliant and on-time turnarounds.',
   },
   body: {
@@ -92,7 +92,7 @@ export const passengerServices = {
   },
   hero: {
     heading: 'Passenger Services',
-    providerLine: 'Delivered by AAM Airport Services DOO',
+    providerLine: 'Delivered by AAM Airport DOO',
     intro: 'Supervised check-in, gate management, VIP handling and transfer coordination. AAM also operates a permanent ticket sales desk in the Arrivals Hall at SKP.',
   },
   body: {
@@ -119,7 +119,7 @@ export const fuelServices = {
   },
   hero: {
     heading: 'Fuel Services',
-    providerLine: 'Delivered by AAM Airport Services DOO',
+    providerLine: 'Delivered by AAM Airport DOO',
     intro: 'Fuel supply coordination, refuelling supervision and into-plane fuelling services at Skopje and Ohrid airports. Negotiated rates, flexible payment terms and 24/7 coordination.',
   },
   body: {
@@ -145,7 +145,7 @@ export const cargoLogistics = {
   },
   hero: {
     heading: 'Cargo & Logistics',
-    providerLine: 'Delivered by AAM Airport Services DOO',
+    providerLine: 'Delivered by AAM Airport DOO',
     intro: 'Cargo handling and airside logistics coordination at Skopje and Ohrid airports. We coordinate cargo operations, manage airside logistics and support crew and flight logistics for airlines operating into Macedonia.',
   },
   body: {
