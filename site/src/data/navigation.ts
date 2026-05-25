@@ -3,13 +3,10 @@ export const navLinks = [
     label: 'Services',
     path: '/services',
     children: [
-      { label: 'Ground Handling', path: '/services/ground-handling' },
+      { label: 'Ground Handling Supervision', path: '/services/ground-handling' },
       { label: 'Passenger Services', path: '/services/passenger-services' },
       { label: 'Fuel Services', path: '/services/fuel-services' },
       { label: 'Cargo & Logistics', path: '/services/cargo-logistics' },
-      { label: 'divider' as const, path: '' },
-      { label: 'Ticket Consolidation (Avionet)', path: '/services/ticket-consolidation' },
-      { label: 'Corporate Travel (Avionet)', path: '/services/corporate-travel' },
     ],
   },
   {

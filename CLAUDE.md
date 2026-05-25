@@ -7,7 +7,7 @@ Full source of truth is in `raw/content/_project-reference.md`.
 
 ## What This Project Is
 
-A website for **AAM AIRPORT DOO Skopje** (aam.com.mk) — a Macedonian aviation ground handling supervision company operating at Skopje (SKP) and Ohrid (OHD) airports since 1995. The site is B2B, targeting two primary audiences: **airlines** and **travel agencies**.
+A website for **AAM AIRPORT DOO Skopje** (aam.com.mk) — a Macedonian ground handling supervision company operating at Skopje (SKP) and Ohrid (OHD) airports since 1995. AAM does not perform ground handling — it supervises it, acting as the airline's representative and QA layer between carriers and ground handlers. The site is B2B, targeting two primary audiences: **airlines** and **travel agencies**.
 
 AAM AIRPORT DOO Skopje is the operating company under the parent **AAM DOOEL Skopje**.
 
@@ -27,7 +27,8 @@ The site is built with **Astro 4 + Tailwind CSS 3 + @lucide/astro** (same stack 
 | Reg. No. (EMBS) | 6880347 |
 | Tax No. (EDB) | 4080013537923 |
 | Trading name | AAM Airport Services |
-| General Manager | Daniel Andonovic |
+| General Manager (AAM Airport) | Daniel Andonovic |
+| General Manager (AAM DOOEL) | Zoran Malinovski |
 | Founded | 1992 (operating since 1995) |
 | Airports | SKP (Skopje) and OHD (Ohrid) |
 | Phone | +389 2 3117 009 |
@@ -62,13 +63,11 @@ Raw asset files live in `../aam-assets/` at the repo root. These are unoptimized
 ```
 /                                    → Homepage (index.astro)
 /services                            → Services overview (services.astro)
-/services/ground-handling            → Ground Handling (ground-handling.astro)
-/services/ground-handling-request    → Ground Handling Request Form (ground-handling-request.astro)
+/services/ground-handling            → Ground Handling Supervision (ground-handling.astro)
+/services/ground-handling-request    → Ground Handling Supervision Request (ground-handling-request.astro)
 /services/passenger-services         → Passenger Services
 /services/fuel-services              → Fuel Services
 /services/cargo-logistics            → Cargo & Logistics
-/services/ticket-consolidation       → Ticket Consolidation
-/services/corporate-travel           → Corporate Travel
 /airports/skp                        → Skopje Airport (airports/skp.astro)
 /airports/ohd                        → Ohrid Airport (airports/ohd.astro)
 /about                               → About (about.astro)
@@ -86,12 +85,12 @@ No separate Partners page. The logo section on the homepage is sufficient.
 ## Navigation
 
 ```
-Services · Airports · For Airlines · Travel Agents · About · Contact
+Services · Airports · About · Contact
 ```
 
 Right side of nav: phone number + **[24/7 Support]** button (solid filled, dark text on white).
 
-"For Travel Agents & Companies" from the old nav is now shortened to **Travel Agents**.
+"For Travel Agents & Companies" has been removed from the nav. Avionet/ticketing services now linked via a single-strip callout on the homepage pointing to avio.net.mk.
 "Partners" has been removed from the nav — it lives in the footer only.
 
 ---
@@ -112,13 +111,13 @@ All forms submit via **Web3Forms** (`https://api.web3forms.com/submit`). Every f
 | Page | URL | Key | Notes |
 |---|---|---|---|
 | Contact form | `/` (homepage, bottom) | `PUBLIC_WEB3FORMS_KEY` | Name, email, interest dropdown, message |
-| Ground Handling Request | `/services/ground-handling-request` | `PUBLIC_WEB3FORMS_KEY` | Full aircraft details, arrival/departure, 11 service checkboxes, contact info. Intro letter from ops team at top. |
+| Ground Handling Supervision Request | `/services/ground-handling-request` | `PUBLIC_WEB3FORMS_KEY` | Full aircraft details, arrival/departure, 11 service checkboxes, contact info. Intro letter from ops team at top. |
 | Supervision Report | `/ops/supervision-report` | `PUBLIC_WEB3FORMS_OPS_KEY` | Hidden ops form — supervisor details, flight info, services provided, quality, charges, MVT routing |
 | Safety Report | `/ops/safety-report` | `PUBLIC_WEB3FORMS_OPS_KEY` | Hidden ops form — supervisor name, date, reporting type dropdown, mandatory remarks |
 
 ### Environment variables
 - `site/.env.local` (gitignored) — copy from `site/.env.local.example`
-- `PUBLIC_WEB3FORMS_KEY` — main contact and ground handling form submissions
+- `PUBLIC_WEB3FORMS_KEY` — main contact and ground handling supervision form submissions
 - `PUBLIC_WEB3FORMS_OPS_KEY` — ops/internal form submissions (supervision report, safety report)
 - `PUBLIC_GA_ID` — Google Analytics 4 measurement ID
 - Env access is centralized in `site/src/data/env.ts` — import from there, never use `import.meta.env` directly in other files (avoids Vite chunk-splitting bug in dev mode)
@@ -139,7 +138,6 @@ If something seems missing, check `content/_project-reference.md` before asking.
 | `content/page-airport-skp.md` | SKP airport page |
 | `content/page-airport-ohd.md` | OHD airport page |
 | `content/page-for-airlines.md` | For Airlines |
-| `content/page-travel-agents.md` | Travel Agents / Avionet |
 | `content/page-about.md` | About AAM |
 | `content/page-contact.md` | Contact |
 
@@ -175,6 +173,32 @@ If something seems missing, check `content/_project-reference.md` before asking.
 
 ---
 
+## Copywriting & Tone
+
+Reference tone: https://www.a-h-s.nl/ — operator prose, buyer's language, facts over claims. Write like an ops person talking to another ops person. The reader is an airline station manager or travel agency operator — they buy on specifics, not sentiment.
+
+### Rules
+
+- **No superlatives.** Never use "best", "leading", "premier", "top-tier", "unmatched", "world-class", or any self-awarded ranking. If a fact is impressive, state the fact and let the reader decide.
+- **No self-assessed credibility claims.** Don't say "trusted partner", "proven reliability", or "dedicated team" — these are empty to a B2B buyer. Instead say what you do and for whom, with dates and numbers.
+- **No aspiration language.** Never write "we aim to", "we strive to", "our mission is", "we are committed to", "we pride ourselves on". These signal you haven't done it yet. State what IS.
+- **Declarative statements only.** "Flight reports are sent within 2 hours after departure" — not "We pride ourselves on timely flight reporting." Every sentence should be verifiable by the reader.
+- **Lead with facts, not adjectives.** AHS opens with founding year, founder name, Chamber of Commerce number. AAM pages should lead with: years operating, airports served, airline partners, regulatory identifiers.
+- **Use the buyer's vocabulary.** Industry jargon (AOG, PNL, PTM, PRM, ULD, SLA, turnaround, MVT) is correct here — it signals you speak their language. Don't simplify for a general audience.
+- **Passive/reporting voice is acceptable.** "Control of valid travel documents", "Verifying availability and preparedness" — operational descriptions benefit from this style. Use active voice for direct factual statements.
+
+### Examples
+
+| Don't | Do |
+|---|---|
+| "We are the leading ground handler in Macedonia" | "Ground handling supervision at SKP and OHD since 1995" |
+| "Our dedicated team strives to provide the best service" | "Flight reports within 2 hours of departure. 24/7 supervision desk." |
+| "Trusted by 10+ airlines across the region" | "10+ airline partners: Wizz Air, Turkish Airlines, Air Serbia, Croatia Airlines, WorldFuel" |
+| "We pride ourselves on safety and reliability" | "IATA SGHA-compliant. Safety reports filed per operation." |
+| "Unmatched expertise in the Macedonian market" | "30 years at SKP and OHD. Full ramp, passenger, and cargo supervision." |
+
+---
+
 ## Known Issues to Fix (priority order)
 
 ### P1 — Fix before launch
@@ -203,9 +227,9 @@ If something seems missing, check `content/_project-reference.md` before asking.
 ## AAM Group Structure
 
 - **AAM DOOEL Skopje** — parent holding company
-- **AAM AIRPORT DOO Skopje** — operating company, ground handling & aviation services (this website)
+- **AAM AIRPORT DOO Skopje** — operating company, ground handling supervision (this website)
 - **Avionet Travel Agency DOO Skopje** (avio.net.mk) — IATA/BSP consolidator, subsidiary
-- **AAM Airport DOO** — part of the group, ground handling operations subsidiary
+- **AAM Airport DOO** — part of the group, ground handling supervision operations subsidiary
 
 The Avionet section on the homepage and the `/travel-agents` page are the main touchpoints for the travel agency audience. Always link to avio.net.mk for the full Avionet experience.
 
@@ -222,3 +246,8 @@ The Avionet section on the homepage and the `/travel-agents` page are the main t
 - Do not use ghost buttons as primary CTAs on dark backgrounds
 - Do not put more than 3 bullet points in a service card
 - Do not use `import.meta.env` directly in `.astro` files — import from `site/src/data/env.ts` instead (avoids Vite dev-mode chunk-splitting bug)
+- Do not use superlatives ("best", "leading", "premier", "unmatched") — state facts, let the reader judge
+- Do not use self-assessed credibility claims ("trusted partner", "proven reliability") — say what you do, for whom, with dates
+- Do not use aspiration language ("we aim to", "we strive to", "our mission is") — state what IS, not what you hope to be
+- Do not use marketing adjectives where a fact would do — "Flight reports within 2 hours" not "industry-leading reporting"
+- Do not describe AAM as a ground handler — it is a ground handling supervision company (owner's rep / QA layer)

@@ -2,7 +2,7 @@
 
 ## Meta
 - **Page:** `/contact`
-- **Title tag:** Contact AAM — Ground Handling Support at SKP & OHD
+- **Title tag:** Contact AAM — Ground Handling Supervision at SKP & OHD
 - **Meta description:** Contact AAM DOOEL Skopje for ground handling supervision, station management or aviation support at Skopje (SKP) or Ohrid (OHD). Available 24/7.
 
 ---
@@ -27,7 +27,6 @@ Our main office is in the heart of Skopje on Dame Gruev Street. This is where yo
 - Flight booking & ticket sales
 - Travel agency sub-agent sign-ups
 - Corporate travel accounts
-- Avionet B2B partnerships
 - Group & charter enquiries
 - Wizz Air ticket sales & support
 
@@ -81,10 +80,3 @@ For station management, ground handling supervision and operational support enqu
 For new partnership discussions, contact us during business hours (Mon–Fri 08:00–17:00 CET).
 
 ---
-
-## For Travel Agencies
-
-For sub-agent access, BSP ticketing and Avionet consolidator services — contact our office or visit avio.net.mk directly.
-
-**Website:** avio.net.mk
-**Phone:** +389 2 3117 009

@@ -37,11 +37,18 @@ export const company = {
   website: 'aam.com.mk',
 };
 
-export const gm = {
-  name: 'Daniel Andonovic',
-  title: 'General Manager, AAM DOOEL Skopje',
-  linkedin: 'https://www.linkedin.com/in/daniel-andonovic-25525737/',
-};
+export const leadershipTeam = [
+  {
+    name: 'Daniel Andonovic',
+    title: 'General Manager, AAM Airport DOO Skopje',
+    linkedin: 'https://www.linkedin.com/in/daniel-andonovic-25525737/',
+  },
+  {
+    name: 'Zoran Malinovski',
+    title: 'General Manager, AAM DOOEL Skopje',
+    linkedin: '',
+  },
+];
 
 export const partners = [
   // Current airline partners

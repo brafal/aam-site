@@ -2,7 +2,7 @@
 
 ## Meta
 - **Page:** `/services`
-- **Title tag:** Aviation Ground Handling Services — SKP & OHD | AAM
+- **Title tag:** Aviation Ground Handling Supervision Services — SKP & OHD | AAM
 - **Meta description:** Full-spectrum ground handling supervision at Skopje and Ohrid airports — station management, passenger services, ramp supervision, fuel arrangements and crew logistics.
 
 ---
@@ -68,7 +68,7 @@ Full ramp handling supervision at SKP & OHD. AAM coordinates third-party ground 
 ## Service 04 — Fuel Arrangements
 
 **Headline:** Fuel Arrangements
-**Subtext:** Competitive fuel rates, flexible terms, 24/7 coordination.
+**Subtext:** Negotiated fuel rates, flexible terms, 24/7 coordination.
 
 Negotiated fuel rates from established suppliers. All major fuel cards accepted with flexible payment arrangements to suit airline and charter operators.
 

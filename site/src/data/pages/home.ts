@@ -1,11 +1,11 @@
 export const meta = {
-  title: 'Aviation Ground Handling in Macedonia | AAM Airport Services',
-  description: 'AAM Airport Services provides ground handling, ramp, passenger, fuel and cargo services at Skopje (SKP) and Ohrid (OHD) airports. Est. 1992.',
+  title: 'Ground Handling Supervision & Aviation Support in Macedonia | AAM Airport Services',
+  description: 'AAM Airport Services provides ground handling supervision, station management, passenger services, fuel coordination and cargo logistics at Skopje (SKP) and Ohrid (OHD) airports. Est. 1992.',
 };
 
 export const hero = {
   badge: 'Since 1992',
-  heading: 'Aviation Ground Handling in Macedonia',
+  heading: 'Ground Handling Supervision & Aviation Support in Macedonia',
   subheading: 'Station management, ramp, passenger, fuel and cargo services at Skopje and Ohrid airports — since 1992.',
   ctaPrimary: '24/7 Operational Support',
   ctaSecondary: 'Our Services',
@@ -86,7 +86,7 @@ export const aboutSection = {
   heading: 'GSA Services & Ground Handling Supervision — Skopje & Ohrid',
   paragraphs: [
     'AAM provides station management and ground handling supervision at SKP (Skopje International Airport) and OHD (Ohrid St. Paul the Apostle Airport). We act as the airline\'s local representative — supervising third-party handlers, coordinating flight operations, and managing irregularity response on the ground.',
-    'Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — making us the most reliable ground handling supervision partner in Macedonia and the Western Balkans.',
+    'Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — which is why airlines use us for ground handling supervision at both Macedonian international airports.',
   ],
   facts: [
     { label: 'Company', value: 'AAM DOOEL Skopje' },
@@ -97,7 +97,7 @@ export const aboutSection = {
 
 export const timelineSection = {
   eyebrow: 'OUR JOURNEY',
-  heading: 'Three Decades of Aviation Excellence',
+  heading: 'Three Decades in Aviation',
 };
 
 export const airportsSection = {
@@ -126,44 +126,14 @@ export const airportsSection = {
   },
 };
 
-export const avionetSection = {
-  eyebrow: 'AN AAM GROUP SUBSIDIARY',
-  badge: 'IATA ACCREDITED TRAVEL AGENT',
-  heading: 'Air Ticketing & Consolidator Services',
-  intro: 'Avionet is AAM Group\'s IATA-accredited travel agency — specialising in air ticketing, complex itinerary management, and consolidator services from Skopje. Serving passengers, partner travel agencies, and corporate clients across Macedonia with personal support and transparent pricing.',
-  forAgencies: {
-    heading: 'For Travel Agencies',
-    bullets: [
-      'Issue tickets via Avionet\'s IATA/BSP infrastructure — no own licence, no bank guarantees',
-      'Amadeus GDS terminal for experienced agents, web-based engine for quick searches',
-      'Training, technical support, and booking assistance from a local partner',
-      '20+ partner agencies across Macedonia, relationships spanning 15+ years',
-    ],
-  },
-  forCorporate: {
-    heading: 'For Corporate Clients',
-    bullets: [
-      'Dedicated travel agent assigned to your company',
-      'Flights, hotels, rent-a-car — one local partner for all business travel',
-      'Invoicing in MKD between Macedonian legal entities — no foreign payment complexity',
-      'Direct support during disruptions — real people, not a call centre',
-    ],
-  },
-  features: [
-    { title: 'Consolidator Network', desc: 'Non-IATA travel agencies issue tickets through Avionet\'s infrastructure — GDS access, training, and ongoing support included. No bank guarantees, no IATA complexity.' },
-    { title: 'Local Expertise, Personal Support', desc: 'Not an online-only platform. Real travel agents based in Skopje — same-day response, in-person visits, direct phone support. Built in Macedonia, for Macedonia.' },
-  ],
-  cta: 'Visit avio.net.mk',
-};
-
 export const partnersSection = {
   eyebrow: 'OUR PARTNERS & CLIENTS',
-  heading: 'Trusted by Global Aviation Leaders',
-  tagline: 'We have the privilege of working with some of the most respected names in global aviation.',
+  heading: 'Our Partners & Clients',
+  tagline: 'Airlines and operators we work with at SKP and OHD.',
 };
 
 export const closingCta = {
   heading: 'Need Ground Handling Supervision at SKP or OHD?',
-  subtext: 'Whether you\'re an airline requiring station management, a flight ops officer seeking ground support, a travel agency looking for BSP consolidator access, or a corporate client planning group travel — we\'re here to help.',
+  subtext: 'Whether you\'re an airline requiring station management or a flight ops officer seeking ground support — we\'re here to help.',
   cta: 'Request Operational Support',
 };

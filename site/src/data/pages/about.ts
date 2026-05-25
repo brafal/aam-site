@@ -6,7 +6,7 @@ export const meta = {
 export const hero = {
   badge: 'About AAM',
   heading: '30+ Years on the Ground in Macedonia',
-  subtext: 'Founded in 1992, AAM DOOEL Skopje is Macedonia\'s most experienced aviation ground handling supervision company.',
+  subtext: 'Founded in 1992, AAM DOOEL Skopje provides ground handling supervision at SKP and OHD for international airlines across the region.',
 };
 
 export const intro = {
@@ -29,8 +29,8 @@ export const group = {
   },
   aamAirport: {
     name: 'AAM Airport DOO',
-    role: 'Ground handling operations subsidiary',
-    desc: 'Ground handling, ramp supervision, passenger services, fuel coordination and cargo logistics at SKP and OHD.',
+    role: 'Ground handling supervision operations subsidiary',
+    desc: 'Ground handling supervision, ramp supervision, passenger services, fuel coordination and cargo logistics at SKP and OHD.',
     embs: 'EMBS (Registration Number): —',
     edb: 'EDB (Tax Identification Number): —',
     cta: 'View Services',
@@ -38,7 +38,7 @@ export const group = {
   avionet: {
     name: 'Avionet DOO Skopje',
     role: 'IATA/BSP consolidator and corporate travel management',
-    desc: "IATA-accredited travel agency and BSP consolidator. 20+ partner agencies across Macedonia, relationships spanning 15+ years. Air ticketing, consolidator and corporate travel services.",
+    desc: "IATA-accredited travel agency and BSP consolidator. Issue tickets through Avionet's infrastructure — visit avio.net.mk for details.",
     embs: 'EMBS (Registration Number): —',
     edb: 'EDB (Tax Identification Number): —',
     cta: 'avio.net.mk',
@@ -48,6 +48,19 @@ export const group = {
 export const leadership = {
   heading: 'Leadership',
   ownership: 'AAM is a family-owned Macedonian company, fully independent since 2006.',
+};
+
+export const certifications = {
+  heading: 'Certifications & Accreditations',
+  items: [
+    {
+      name: 'CAA Macedonia',
+      fullName: 'Civil Aviation Agency of Macedonia',
+      logo: '/logo/caa-macedonia.png',
+      certificate: '/certificates/caa-certificate.pdf',
+      desc: 'AAM is certified by the Civil Aviation Agency of Macedonia for ground handling supervision at Skopje and Ohrid airports.',
+    },
+  ],
 };
 
 export const historyTimeline = {

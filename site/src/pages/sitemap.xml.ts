@@ -10,8 +10,6 @@ export async function GET() {
     '/services/passenger-services',
     '/services/fuel-services',
     '/services/cargo-logistics',
-    '/services/ticket-consolidation',
-    '/services/corporate-travel',
     '/airports/skp',
     '/airports/ohd',
   ];

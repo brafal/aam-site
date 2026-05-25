@@ -13,7 +13,7 @@
 
 **Headline:** Ground Handling Supervision at Skopje International Airport
 
-**Subtext:** AAM has been the trusted local aviation partner at SKP since 1995. We provide full station management, ground handling supervision and a permanent ticket sales desk in the Arrivals Hall.
+**Subtext:** AAM has been the local aviation representative at SKP since 1995. We provide full station management, ground handling supervision and a permanent ticket sales desk in the Arrivals Hall.
 
 **Button:** Request Operational Support
 

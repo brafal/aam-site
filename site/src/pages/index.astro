@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { stats, partners, timeline } from '../data/site';
 import {
   meta, hero, servicesOverview, aboutSection, timelineSection,
-  airportsSection, avionetSection, partnersSection, closingCta,
+  airportsSection, partnersSection, closingCta,
 } from '../data/pages/home';
 import { defaultLocale } from '../data/i18n';
 
@@ -142,7 +142,7 @@ const orgJsonLd = JSON.stringify({
   </section>
 
   <!-- ===== AIRPORTS ===== -->
-  <section class="py-14 md:py-18">
+  <section class="py-14 md:py-18 bg-surface-soft">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="mb-8">
         <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
@@ -180,7 +180,7 @@ const orgJsonLd = JSON.stringify({
   </section>
 
   <!-- ===== PARTNERS ===== -->
-  <section class="py-14 md:py-18">
+  <section class="py-14 md:py-18 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-8">
         <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
@@ -192,7 +192,7 @@ const orgJsonLd = JSON.stringify({
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {partners.map(p => (
           <a href={p.website || '#'} target="_blank" rel="noopener noreferrer" class={`flex flex-col items-center gap-2 p-5 rounded-xl border border-slate-200 bg-surface-soft hover:border-aam-blue/30 hover:shadow-sm transition-all text-center ${!p.current ? 'opacity-50 hover:opacity-75' : ''}`}>
-            <img src={p.logo} alt={p.name} class="h-10 w-auto object-contain mb-1" loading="lazy" />
+            <img src={p.logo} alt={p.name} class="h-12 w-auto object-contain mb-1" loading="lazy" />
             <span class="font-semibold text-base text-slate-900">{p.name}</span>
             {'iata' in p && p.iata ? <span class="text-xs tracking-[0.14em] text-slate-400 font-mono uppercase">{p.iata}</span> : null}
             <span class="text-sm text-slate-500">{p.relationship}</span>
@@ -270,60 +270,6 @@ const orgJsonLd = JSON.stringify({
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== AVIONET ===== -->
-  <section class="py-14 md:py-18 bg-surface-soft">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="mb-8">
-        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
-          {avionetSection.eyebrow}
-        </span>
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.14em] text-aam-blue border border-aam-blue/30 px-3 py-1 rounded-md mb-4 ml-3">
-          {avionetSection.badge}
-        </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-3">{avionetSection.heading}</h2>
-        <p class="text-base text-slate-600 leading-relaxed max-w-[720px] mb-8">{avionetSection.intro}</p>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-10">
-          <div>
-            <h3 class="text-lg font-bold text-slate-900 mb-3">{avionetSection.forAgencies.heading}</h3>
-            <ul class="space-y-2">
-              {avionetSection.forAgencies.bullets.map(b => (
-                <li class="flex items-start gap-2.5 text-sm text-slate-600">
-                  <svg class="w-4 h-4 text-aam-blue shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-slate-900 mb-3">{avionetSection.forCorporate.heading}</h3>
-            <ul class="space-y-2">
-              {avionetSection.forCorporate.bullets.map(b => (
-                <li class="flex items-start gap-2.5 text-sm text-slate-600">
-                  <svg class="w-4 h-4 text-aam-blue shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4 mb-8">
-          {avionetSection.features.map(f => (
-            <div class="bg-white border border-slate-200 rounded-xl p-5">
-              <h4 class="font-bold text-slate-900 mb-1">{f.title}</h4>
-              <p class="text-sm text-slate-500">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-aam-blue text-white px-6 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
-          {avionetSection.cta} ↗
-        </a>
       </div>
     </div>
   </section>

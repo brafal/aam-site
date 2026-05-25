@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { meta, hero, index, aamServices, avionetServices } from '../data/pages/services';
+import { meta, hero, index, aamServices } from '../data/pages/services';
 import { defaultLocale } from '../data/i18n';
 
 const lang = defaultLocale;
@@ -38,24 +38,6 @@ const lang = defaultLocale;
         ))}
       </div>
 
-      <div class="flex items-center gap-4 mb-8">
-        <span class="font-mono text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold">{index.avionetNote}</span>
-        <span class="flex-1 h-px bg-slate-200"></span>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-5">
-        {avionetServices.map(svc => (
-          <a href={svc.href} class="group relative bg-white border border-slate-200 rounded-xl p-6 flex flex-col gap-3 transition-all hover:-translate-y-1 hover:border-aam-blue hover:shadow-[0_12px_30px_-8px_rgba(11,30,63,.12)]">
-            <span class="absolute top-0 left-6 w-6 h-[3px] bg-aam-gold rounded-b"></span>
-            <h3 class="text-lg font-bold text-slate-900">{svc.name}</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">{svc.desc}</p>
-            <div class="mt-auto pt-2 flex items-center justify-between">
-              <span class="text-xs font-medium text-aam-blue">Learn more →</span>
-              <span class="text-xs text-slate-400">{svc.provider}</span>
-            </div>
-          </a>
-        ))}
-      </div>
     </div>
   </section>
 

@@ -13,7 +13,8 @@
 | Trading name | AAM Airport Services |
 | Country | Macedonia |
 | Founded | 1992 (operating since 1995) |
-| General Manager | Daniel Andonovic |
+| General Manager AAM DOOEL Skopje | Zoran Malinovski |
+| General Manager AAM Airport DOO Skopje | Daniel Andonovic |
 | LinkedIn | https://www.linkedin.com/in/daniel-andonovic-25525737/ |
 | Head office | Dame Gruev 7, local 7, 1000 Skopje, Macedonia |
 | Airport office | Skopje International Airport (SKP) — Ticket Sales Desk, Arrivals Hall |
@@ -74,7 +75,7 @@
 ## AAM Group Structure
 
 - **AAM DOOEL Skopje** — parent holding company
-- **AAM AIRPORT DOO Skopje** — operating company, ground handling & aviation services (this website)
+- **AAM AIRPORT DOO Skopje** — operating company, ground handling supervision & aviation services (this website)
 - **Avionet Travel Agency DOO Skopje** (avio.net.mk) — IATA/BSP consolidator, subsidiary
 - **AAM Airport Services DOO** — part of family group
 

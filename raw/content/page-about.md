@@ -2,7 +2,7 @@
 
 ## Meta
 - **Page:** `/about`
-- **Title tag:** About AAM DOOEL Skopje — 30+ Years in Aviation Ground Handling
+- **Title tag:** About AAM DOOEL Skopje — 30+ Years in Aviation Ground Handling Supervision
 - **Meta description:** AAM DOOEL Skopje has provided ground handling supervision and aviation support at Skopje (SKP) and Ohrid (OHD) airports since 1995. Learn about our history, team and regional network.
 
 ---
@@ -13,7 +13,7 @@
 
 **Headline:** 30+ Years on the Ground in Macedonia
 
-**Subtext:** Founded in 1992 and operating since 1995, AAM DOOEL Skopje is Macedonia's most experienced aviation ground handling supervision company — trusted by world-class airlines across the region.
+**Subtext:** Founded in 1992 and operating since 1995, AAM DOOEL Skopje provides ground handling supervision at SKP and OHD for international airlines across the region.
 
 ---
 
@@ -23,7 +23,7 @@ AAM DOOEL Skopje provides station management, ground handling supervision and fu
 
 We act as the local representative for international airlines operating in Macedonia — supervising third-party ground handlers, coordinating flight operations, and managing irregularity response on the ground.
 
-Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — making us the most reliable ground handling supervision partner in Macedonia and the Western Balkans.
+Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — which is why airlines use us for ground handling supervision at both Macedonian international airports.
 
 ---
 
@@ -89,11 +89,14 @@ Part of the AAM Group, providing complementary airport services.
 
 ---
 
-## General Manager
+## Leadership
 
 **Daniel Andonovic**
-General Manager, AAM DOOEL Skopje
+General Manager, AAM Airport DOO Skopje
 [LinkedIn](https://www.linkedin.com/in/daniel-andonovic-25525737/)
+
+**Zoran Malinovski**
+General Manager, AAM DOOEL Skopje
 
 ---
 

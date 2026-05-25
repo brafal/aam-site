@@ -8,19 +8,19 @@ import { WEB3FORMS_KEY as web3formsKey } from '../../data/env';
 const lang = defaultLocale;
 ---
 
-<Layout title="Ground Handling Request — AAM Airport Services" description="Submit your ground handling requirements for SKP or OHD.">
+<Layout title="Ground Handling Supervision Request — AAM Airport Services" description="Submit your ground handling supervision requirements for SKP or OHD.">
   <Nav lang={lang} />
 
   <section class="bg-surface-soft py-14 md:py-18">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <div class="mb-8">
         <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
-          Ground Handling & Ground Support
+          Ground Handling Supervision & Ground Support
         </span>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-4">Request Ground Handling Services</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-4">Request Ground Handling Supervision</h1>
         <div class="bg-white border border-slate-200 rounded-xl p-6 text-base text-slate-600 leading-relaxed space-y-3">
           <p>Dear customer,</p>
-          <p>Our highly motivated team aims to ensure best quality, reliability and individual care on ground.</p>
+          <p>Our team works to ensure consistent quality and individual care on the ground.</p>
           <p>To enable this high standard in service, we kindly ask you to give us as detailed information as possible.</p>
           <p>We look forward to serving you and thank you for your cooperation!</p>
         </div>
@@ -28,8 +28,8 @@ const lang = defaultLocale;
 
       <form id="gh-form" action="https://api.web3forms.com/submit" method="POST" class="bg-white border border-slate-200 rounded-xl p-8">
         <input type="hidden" name="access_key" value={web3formsKey} />
-        <input type="hidden" name="subject" value="Ground Handling Request via aam.com.mk" />
-        <input type="hidden" name="from_name" value="AAM Ground Handling" />
+        <input type="hidden" name="subject" value="Ground Handling Supervision Request via aam.com.mk" />
+        <input type="hidden" name="from_name" value="AAM Ground Handling Supervision" />
         <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
 
         <!-- Aircraft Details -->

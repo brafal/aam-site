@@ -15,21 +15,46 @@ export const details = {
   phone: '+389 2 3117 009',
   email: 'aaminfo@aam.com.mk',
   hours: 'Mon–Fri 08:00–17:00',
-  avionetNote: 'For Avionet (ticket consolidation / corporate travel) enquiries, visit avio.net.mk directly.',
 };
+
+export const locations = [
+  {
+    name: 'Head Office — Skopje City Centre',
+    image: '/images/location/aam-centar-skopje.webp',
+    address: 'Dame Gruev 7, local 7, 1000 Skopje, Macedonia',
+    hours: 'Mon–Fri 08:00–17:00',
+    phone: '+389 2 3117 009',
+    services: [
+      'Flight booking & ticket sales',
+      'Travel agency sub-agent sign-ups',
+      'Corporate travel accounts',
+      'Group & charter enquiries',
+    ],
+  },
+  {
+    name: 'Airport Desk — SKP Arrivals Hall',
+    image: '/images/location/aam-airport.webp',
+    address: 'Arrivals Hall, Skopje International Airport (SKP)',
+    hours: 'During all flight operations',
+    phone: '+389 2 3117 009',
+    services: [
+      'Cancelled & missed flight rebooking',
+      'Excess baggage assistance',
+      'Ticket changes & corrections',
+      'Last-minute ticket purchases',
+    ],
+  },
+];
 
 export const form = {
   heading: 'Send a Message',
   submit: 'Send Message',
   success: "Thank you — we'll be in touch shortly.",
   error: 'Something went wrong. Please try again or email us.',
-  avionetHint: 'For consolidation and corporate travel services, Avionet handles enquiries directly at avio.net.mk — though you are welcome to contact us here too.',
 };
 
 export const reasons = [
   { value: 'airline', label: 'Airline partnership / station services' },
-  { value: 'agency', label: 'Travel agency / consolidation' },
-  { value: 'corporate', label: 'Corporate travel enquiry' },
   { value: 'general', label: 'General enquiry' },
   { value: 'press', label: 'Press / media' },
 ];

@@ -3,7 +3,7 @@
 ## Meta
 - **Page:** `/airlines`
 - **Title tag:** Ground Handling Supervision for Airlines at SKP & OHD | AAM
-- **Meta description:** AAM acts as your local representative at Skopje (SKP) and Ohrid (OHD) — supervising ground handlers, managing irregularities and keeping every turnaround on schedule. Trusted by 10+ airlines since 1992.
+- **Meta description:** AAM acts as your local representative at Skopje (SKP) and Ohrid (OHD) — supervising ground handlers, managing irregularities and keeping every turnaround on schedule. Supporting 10+ airlines since 1992.
 
 ---
 
@@ -57,8 +57,7 @@ Your passengers handled professionally, every flight:
 ### GSA — Commercial Representation
 For airlines evaluating market presence in Macedonia:
 - Ticket sales at our permanent SKP Arrivals Hall desk
-- Distribution through Avionet (IATA/BSP consolidator)
-- Sub-agent network across 20+ agencies in Macedonia
+- Distribution through Avionet — IATA/BSP consolidator (avio.net.mk)
 - Corporate account management
 
 ### Fuel & Crew Logistics
@@ -81,7 +80,7 @@ AAM coordinates and supervises on your behalf. You get a local accountable repre
 **Regional network across 5 countries**
 Our operational network covers Macedonia, Albania, Serbia, Montenegro and Slovenia — useful for airlines operating multiple Balkan routes.
 
-**Track record with global carriers**
+**Current and past airline partners**
 We've supported Swissair, Swiss International, Adria Airways, Edelweiss, Air Serbia, LOT, Turkish Airlines, Jetex and more.
 
 ---

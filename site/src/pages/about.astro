@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { timeline, gm } from '../data/site';
-import { meta, hero, intro, group, leadership, historyTimeline, closingCta } from '../data/pages/about';
+import { timeline, leadershipTeam } from '../data/site';
+import { meta, hero, intro, group, leadership, certifications, historyTimeline, closingCta } from '../data/pages/about';
 import { defaultLocale } from '../data/i18n';
 
 const lang = defaultLocale;
@@ -72,13 +72,42 @@ const lang = defaultLocale;
     </div>
   </section>
 
+  <!-- Certifications -->
+  <section class="py-16 md:py-20 bg-surface-soft">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">{certifications.heading}</h2>
+      {certifications.items.map(cert => (
+        <div class="flex items-center gap-6 bg-white border border-slate-200 rounded-xl p-6">
+          <a href={cert.certificate} target="_blank" rel="noopener noreferrer" class="shrink-0">
+            <img src={cert.logo} alt={cert.fullName} class="h-16 w-auto object-contain" loading="lazy" />
+          </a>
+          <div>
+            <p class="font-semibold text-slate-900 mb-1">{cert.fullName}</p>
+            <p class="text-sm text-slate-500">{cert.desc}</p>
+            <a href={cert.certificate} target="_blank" rel="noopener noreferrer" class="text-sm text-aam-blue font-medium hover:underline mt-1 inline-block">
+              View Certificate (PDF) →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
   <!-- Leadership -->
   <section class="py-16 md:py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">{leadership.heading}</h2>
-      <h3 class="text-xl font-bold text-slate-900 mb-1">{gm.name}</h3>
-      <p class="text-sm text-slate-500 mb-2">{gm.title}</p>
-      <a href={gm.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-slate-400 hover:text-aam-blue transition-colors">LinkedIn ↗</a>
+      <div class="grid md:grid-cols-2 gap-6 mt-4">
+        {leadershipTeam.map(person => (
+          <div class="bg-white border border-slate-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-1">{person.name}</h3>
+            <p class="text-sm text-slate-500 mb-2">{person.title}</p>
+            {person.linkedin && (
+              <a href={person.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-slate-400 hover:text-aam-blue transition-colors">LinkedIn ↗</a>
+            )}
+          </div>
+        ))}
+      </div>
       <p class="text-sm text-slate-500 mt-6 pt-6 border-t border-slate-200">{leadership.ownership}</p>
     </div>
   </section>

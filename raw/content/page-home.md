@@ -3,7 +3,7 @@
 ## Meta
 - **Page:** `/` (index)
 - **Title tag:** Ground Handling Supervision & Aviation Support — SKP & OHD | AAM
-- **Meta description:** AAM DOOEL Skopje provides ground handling supervision, station management and passenger services at Skopje (SKP) and Ohrid (OHD) airports. Trusted by world-class airlines since 1992.
+- **Meta description:** AAM DOOEL Skopje provides ground handling supervision, station management and passenger services at Skopje (SKP) and Ohrid (OHD) airports. Operating at SKP and OHD since 1992.
 
 ---
 
@@ -102,7 +102,7 @@ Need ground handling supervision at SKP or OHD? Our operations team is available
 
 AAM provides station management and ground handling supervision at SKP (Skopje International Airport) and OHD (Ohrid St. Paul the Apostle Airport). We act as the airline's local representative — supervising third-party handlers, coordinating flight operations, and managing irregularity response on the ground.
 
-Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — making us the most reliable ground handling supervision partner in Macedonia and the Western Balkans.
+Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — which is why airlines use us for ground handling supervision at both Macedonian international airports.
 
 **Company facts:**
 - Company: AAM DOOEL Skopje
@@ -114,7 +114,7 @@ Our deep local knowledge, 30+ years of operational experience and extensive regi
 ## Timeline Section
 
 **Section label:** OUR JOURNEY
-**Headline:** Three Decades of Aviation Excellence
+**Headline:** Three Decades in Aviation
 
 | Year | Milestone |
 |---|---|
@@ -146,40 +146,21 @@ Serving the southwestern region and Lake Ohrid tourism corridor. AAM provides se
 
 ---
 
-## Avionet Section
+## Avionet Callout
 
-**Section label:** AN AAM GROUP SUBSIDIARY
-**Badge:** IATA ACCREDITED TRAVEL AGENT
+A narrow single-strip callout on dark navy background.
 
-**Headline:** Air Ticketing & Consolidator Services
-
-Avionet is AAM Group's IATA-accredited travel agency — specialising in air ticketing, complex itinerary management, and consolidator services from Skopje. Serving passengers, partner travel agencies, and corporate clients across Macedonia with personal support and transparent pricing.
-
-**For Travel Agencies:**
-- Issue tickets via Avionet's IATA/BSP infrastructure — no own licence, no bank guarantees
-- Amadeus GDS terminal for experienced agents, web-based engine for quick searches
-- Training, technical support, and booking assistance from a local partner
-- 20+ partner agencies across Macedonia, relationships spanning 15+ years
-
-**For Corporate Clients:**
-- Dedicated travel agent assigned to your company
-- Flights, hotels, rent-a-car — one local partner for all business travel
-- Invoicing in MKD between Macedonian legal entities — no foreign payment complexity
-- Direct support during disruptions — real people, not a call centre
-
-**Feature cards:**
-- Consolidator Network — Non-IATA travel agencies issue tickets through Avionet's infrastructure — GDS access, training, and ongoing support included. No bank guarantees, no IATA complexity.
-- Local Expertise, Personal Support — Not an online-only platform. Real travel agents based in Skopje — same-day response, in-person visits, direct phone support. Built in Macedonia, for Macedonia.
-
-**Button:** Visit avio.net.mk
+**Heading:** Non-IATA Travel Agency? Issue Tickets Without Your Own Licence
+**Subtext:** Avionet — AAM Group's IATA-accredited BSP consolidator — lets you issue airline tickets through our infrastructure. No own IATA licence, no bank guarantees, no BSP complexity.
+**CTA:** Learn more at avio.net.mk → (links to https://avio.net.mk/en/for-agencies/)
 
 ---
 
 ## Partners & Clients
 
 **Section label:** OUR PARTNERS & CLIENTS
-**Headline:** Trusted by Global Aviation Leaders
-**Tagline:** We have the privilege of working with some of the most respected names in global aviation.
+**Headline:** Our Partners & Clients
+**Tagline:** Airlines and operators we work with at SKP and OHD.
 
 | Logo | Relationship | Period |
 |---|---|---|
@@ -210,7 +191,7 @@ Whether you're an airline requiring station management, a flight ops officer see
 
 ## Footer
 
-**Tagline:** Ground handling supervision & station management at Skopje (SKP) and Ohrid (OHD) airports. Trusted by world-class airlines since 1992.
+**Tagline:** Ground handling supervision & station management at Skopje (SKP) and Ohrid (OHD) airports since 1992.
 
 **Quick Links:** Services · Airports · About Us · Contact · Privacy · Terms
 
