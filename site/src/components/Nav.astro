@@ -78,10 +78,6 @@ const enUrl = switchLang(currentPath, 'en');
 
         <!-- Phone + Lang + CTA -->
         <div class="flex items-center ml-3 pl-3 border-l border-slate-200 gap-3">
-          <a href="tel:+38923117009" class="text-base font-semibold text-slate-700 hover:text-aam-blue transition-colors whitespace-nowrap">
-            +389 2 3117 009
-          </a>
-
           <!-- Language switcher -->
           <div class="flex items-center gap-1 text-xs font-mono font-bold">
             <a
@@ -150,7 +146,6 @@ const enUrl = switchLang(currentPath, 'en');
         </div>
       ))}
       <div class="flex items-center gap-3 px-3 pt-3 border-t border-slate-100 mt-2">
-        <a href="tel:+38923117009" class="text-base font-semibold text-slate-700">+389 2 3117 009</a>
         <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-base font-semibold px-4 py-2 rounded-md">Get in Touch</a>
         <div class="flex items-center gap-1 text-xs font-mono font-bold ml-auto">
           <a href={enUrl} class={`px-1.5 py-0.5 rounded ${lang === 'en' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-400'}`}>EN</a>

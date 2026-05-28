@@ -6,7 +6,7 @@ export const navLinks = [
       { label: 'Ground Handling Supervision', path: '/services/ground-handling' },
       { label: 'Passenger Services', path: '/services/passenger-services' },
       { label: 'Fuel Services', path: '/services/fuel-services' },
-      { label: 'Cargo & Logistics', path: '/services/cargo-logistics' },
+      { label: 'Logistics', path: '/services/cargo-logistics' },
     ],
   },
   {

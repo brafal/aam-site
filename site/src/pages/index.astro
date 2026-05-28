@@ -2,9 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { stats, partners, timeline } from '../data/site';
+import { stats, partners } from '../data/site';
 import {
-  meta, hero, servicesOverview, aboutSection, timelineSection,
+  meta, hero, servicesOverview,
   airportsSection, partnersSection, closingCta,
 } from '../data/pages/home';
 import { defaultLocale } from '../data/i18n';
@@ -199,77 +199,6 @@ const orgJsonLd = JSON.stringify({
             <span class="text-xs tracking-[0.1em] text-slate-400 font-mono uppercase mt-auto">{p.period || ''}</span>
           </a>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="py-14 md:py-18 bg-surface-soft">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid md:grid-cols-[1.05fr_1fr] gap-12 items-stretch">
-        <div class="relative rounded-xl overflow-hidden min-h-[460px] bg-gradient-to-br from-[#0F2440] to-[#1B365D]">
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/images/Skopje_Alexander_the_Great_Airport.webp')"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2440]/85 via-[#0F2440]/20 to-transparent"></div>
-          <div class="absolute left-6 bottom-6 bg-white rounded-xl px-5 py-4 shadow-lg flex items-center gap-3 z-10">
-            <span class="text-3xl font-bold text-aam-blue">30+</span>
-            <span class="text-sm font-medium text-slate-600 leading-tight">Years on the<br/>ground at SKP & OHD</span>
-          </div>
-        </div>
-        <div class="flex flex-col justify-center py-6">
-          <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4 w-fit">
-            {aboutSection.eyebrow}
-          </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-5">{aboutSection.heading}</h2>
-          {aboutSection.paragraphs.map(p => <p class="text-base text-slate-600 leading-relaxed mb-3">{p}</p>)}
-          <div class="grid grid-cols-3 gap-3 mt-4">
-            {aboutSection.facts.map(f => (
-              <div class="bg-white border border-slate-200 rounded-lg px-4 py-3">
-                <div class="text-xs uppercase tracking-[0.12em] text-slate-400 font-semibold mb-1">{f.label}</div>
-                <div class="text-sm font-semibold text-slate-800 leading-tight">{f.value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TIMELINE ===== -->
-  <section class="py-14 md:py-18 bg-aam-blue relative overflow-hidden">
-    <div class="absolute left-[-100px] top-[-100px] w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(184,134,11,.08),transparent_70%)] pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-      <div class="mb-10">
-        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-gold bg-aam-gold/10 px-3 py-1.5 rounded-full mb-4">
-          {timelineSection.eyebrow}
-        </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white -tracking-[0.015em]">{timelineSection.heading}</h2>
-      </div>
-      <div class="relative">
-        <!-- Center line -->
-        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/15 -translate-x-1/2"></div>
-        <div class="space-y-0">
-          {timeline.map((event, i) => (
-            <div class={`flex flex-col md:flex-row items-start gap-0 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
-              <div class={`hidden md:flex w-1/2 ${i % 2 === 0 ? 'justify-end pr-8' : 'pl-8'}`}>
-                <div class={`bg-white/5 border border-white/10 rounded-xl p-5 max-w-[340px] backdrop-blur-sm hover:bg-white/8 transition-colors ${i % 2 === 0 ? 'text-right' : ''}`}>
-                  <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-1">{event.period}</span>
-                  <h4 class="text-xl font-bold text-white mb-1.5">{event.title}</h4>
-                  <p class="text-sm text-white/70 leading-relaxed">{event.text}</p>
-                </div>
-              </div>
-              <div class="hidden md:flex relative w-0 justify-center">
-                <span class="absolute top-6 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
-              </div>
-              <div class="md:hidden w-full pl-6 border-l-2 border-aam-gold/30 pb-8 relative">
-                <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-aam-gold border-4 border-aam-blue shadow-[0_0_0_2px_rgba(184,134,11,1)]"></span>
-                <span class="text-xs text-aam-gold font-semibold font-mono tracking-[0.1em] uppercase block mb-2">{event.period}</span>
-                <h4 class="text-xl font-bold text-white mb-1.5">{event.title}</h4>
-                <p class="text-sm text-white/70 leading-relaxed">{event.text}</p>
-              </div>
-              <div class="hidden md:block w-1/2"></div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   </section>

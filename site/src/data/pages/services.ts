@@ -1,6 +1,6 @@
 export const meta = {
   title: 'Aviation Services | AAM Airport Services Macedonia',
-  description: 'Full-service ground handling supervision, passenger services, fuel coordination and cargo logistics at SKP and OHD airports in Macedonia.',
+  description: 'Full-service ground handling supervision, passenger services, fuel coordination and logistics at SKP and OHD airports in Macedonia.',
 };
 
 export const hero = {
@@ -10,7 +10,7 @@ export const hero = {
 };
 
 export const index = {
-  intro: 'AAM Airport DOO provides ground handling supervision, passenger services, fuel coordination and cargo logistics at Skopje and Ohrid airports.',
+  intro: 'AAM Airport DOO provides ground handling supervision, passenger services, fuel coordination and logistics at Skopje and Ohrid airports.',
 };
 
 export const aamServices = [
@@ -33,8 +33,8 @@ export const aamServices = [
     provider: 'AAM Airport DOO',
   },
   {
-    name: 'Cargo & Logistics',
-    desc: 'Cargo coordination and logistics support at SKP and OHD since 1992.',
+    name: 'Logistics',
+    desc: 'Crew accommodation, transport, in-flight catering coordination and cargo support at SKP and OHD.',
     href: '/services/cargo-logistics',
     provider: 'AAM Airport DOO',
   },
@@ -125,27 +125,36 @@ export const fuelServices = {
 
 export const cargoLogistics = {
   meta: {
-    title: 'Cargo & Logistics Handling | AAM Airport Services Macedonia',
-    description: 'Cargo coordination and logistics support at SKP and OHD since 1992.',
+    title: 'Logistics & Crew Support | AAM Airport Services Macedonia',
+    description: 'Crew accommodation, transport, in-flight catering and cargo coordination at SKP and OHD airports.',
   },
   hero: {
-    heading: 'Cargo & Logistics',
+    heading: 'Logistics',
     providerLine: 'Delivered by AAM Airport DOO',
-    intro: 'Cargo handling and airside logistics coordination at Skopje and Ohrid airports. We coordinate cargo operations, manage airside logistics and support crew and flight logistics for airlines operating into Macedonia.',
+    intro: 'Complete logistics and crew support at Skopje and Ohrid airports. From crew accommodation and transport to in-flight catering and cargo coordination — AAM handles the ground logistics so your crew and aircraft are ready to go.',
   },
-  body: {
-    heading: 'What\'s Included',
-    items: [
-      'Cargo coordination & support',
-      'Airside logistics management',
-      'Crew accommodation (HOTAC)',
-      'Crew transportation & airport transfers',
-      'In-flight catering coordination',
-      'VVIP security arrangements',
-      'Airport-to-city transfers',
-      'VIP meet-and-greet services',
-    ],
-    skp: 'Skopje International Airport (SKP)',
-    ohd: 'Ohrid Airport (OHD)',
-  },
+  sections: [
+    {
+      heading: 'Hotel Accommodation',
+      text: 'Hotel accommodation (HOTAC) at Skopje and Ohrid. We work with hotels across both cities, selected for service quality and proximity to the airport. Negotiated rates for crew and passenger bookings, with last-minute changes handled directly by our station staff.',
+    },
+    {
+      heading: 'Transport',
+      text: 'Ground transportation at both airports — standard crew shuttles, executive sedans, limousines and armoured vehicles as required. Drivers are briefed on your schedule and routing. All transfers coordinated from arrival to departure, with in-house vehicles available alongside trusted local partners.',
+    },
+    {
+      heading: 'Catering',
+      text: 'International cuisine sourced from airport and off-airport caterers, tailored to individual preferences. Our staff at each of our airport locations will see to all your catering needs regardless of the dietary or religious requirements.',
+    },
+    {
+      heading: 'Security',
+      text: 'At AAM your security and safety comes first. We are the preferred flight support service provider for many VVIPs and government officials and we take the utmost care in protecting our guests. Naturally we operate a policy of strict confidentiality.',
+    },
+    {
+      heading: 'Cargo',
+      text: 'Cargo coordination and airside logistics support at SKP and OHD. We manage cargo handling on behalf of the airline — coordinating with ground handlers, monitoring documentation and ensuring cargo moves between aircraft and warehouse without delay.',
+    },
+  ],
+  skp: 'Skopje International Airport (SKP)',
+  ohd: 'Ohrid Airport (OHD)',
 };

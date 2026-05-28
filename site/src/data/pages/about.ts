@@ -10,48 +10,58 @@ export const hero = {
 };
 
 export const intro = {
-  heading: 'Who We Are',
+  eyebrow: 'ABOUT AAM',
+  heading: 'GSA Services & Ground Handling Supervision — Skopje & Ohrid',
   paragraphs: [
-    'AAM DOOEL Skopje provides station management, ground handling supervision and full aviation support services at Skopje International Airport (SKP) and Ohrid St. Paul the Apostle Airport (OHD).',
-    'We act as the local representative for international airlines operating in Macedonia — supervising third-party ground handlers, coordinating flight operations, and managing irregularity response on the ground.',
+    'AAM is a family-owned Macedonian company, fully independent since 2006. We provide station management and ground handling supervision at SKP (Skopje International Airport) and OHD (Ohrid St. Paul the Apostle Airport). We act as the airline\'s local representative — supervising third-party handlers, coordinating flight operations, and managing irregularity response on the ground.',
+    'Our deep local knowledge, 30+ years of operational experience and extensive regional network allow us to respond promptly to client needs — which is why airlines use us for ground handling supervision at both Macedonian international airports.',
   ],
+  facts: [
+    { label: 'Company', value: 'AAM DOOEL Skopje' },
+    { label: 'Founded', value: '1992' },
+    { label: 'Country', value: 'Macedonia' },
+  ],
+  image: '/images/Skopje_Alexander_the_Great_Airport.webp',
+  badge: '30+',
+  badgeLabel: 'Years on the\nground at SKP & OHD',
 };
 
 export const group = {
   heading: 'Our Companies',
+  address: 'All companies registered at Dame Gruev 7, local 7, 1000 Skopje, Macedonia',
   aamDoel: {
     name: 'AAM DOOEL Skopje',
+    fullName: 'Друштво за авиосообраќај и туризам ААМ ДООЕЛ-Скопје',
+    fullNameLatin: 'Drushtvo za aviosoobrakaj i turizam AAM DOOEL-Skopje',
     role: 'Parent holding company',
-    address: 'Dame Gruev 7, local 7, 1000 Skopje, Macedonia',
-    embs: 'EMBS (Registration Number): 6880347',
-    edb: 'EDB (Tax Identification Number): 4080013537923',
-    activity: '52.23 — Service activities incidental to air transportation',
+    manager: 'Zoran Malinovski, General Manager',
+    embs: 'EMBS (Registration No.): 4502876',
+    edb: 'EDB (Tax No.): 4030992264811',
   },
   aamAirport: {
     name: 'AAM Airport DOO',
+    fullName: 'ААМ Еирпорт ДОО Скопје',
+    fullNameLatin: 'AAM Airport DOO Skopje',
     role: 'Ground handling supervision operations subsidiary',
-    desc: 'Ground handling supervision, ramp supervision, passenger services, fuel coordination and cargo logistics at SKP and OHD.',
-    embs: 'EMBS (Registration Number): —',
-    edb: 'EDB (Tax Identification Number): —',
+    manager: 'Daniel Andonovic, General Manager',
+    embs: 'EMBS (Registration No.): 6880347',
+    edb: 'EDB (Tax No.): 4080013537923',
     cta: 'View Services',
   },
   avionet: {
     name: 'Avionet DOO Skopje',
+    fullName: 'Друштво за туризам и авиосообраќај АВИОНЕТ ДОО Скопје',
+    fullNameLatin: 'Drushtvo za turizam i aviosoobrakaj AVIONET DOO Skopje',
     role: 'IATA/BSP consolidator and corporate travel management',
-    desc: "IATA-accredited travel agency and BSP consolidator. Issue tickets through Avionet's infrastructure — visit avio.net.mk for details.",
-    embs: 'EMBS (Registration Number): —',
-    edb: 'EDB (Tax Identification Number): —',
+    manager: '',
+    embs: 'EMBS (Registration No.): 4890507',
+    edb: 'EDB (Tax No.): 4030994165772',
     cta: 'avio.net.mk',
   },
 };
 
-export const leadership = {
-  heading: 'Leadership',
-  ownership: 'AAM is a family-owned Macedonian company, fully independent since 2006.',
-};
-
 export const certifications = {
-  heading: 'Certifications & Accreditations',
+  heading: 'AAM Certification & Accreditations',
   items: [
     {
       name: 'CAA Macedonia',

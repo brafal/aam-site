@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { timeline, leadershipTeam } from '../data/site';
-import { meta, hero, intro, group, leadership, certifications, historyTimeline, closingCta } from '../data/pages/about';
+import { timeline } from '../data/site';
+import { meta, hero, intro, group, certifications, historyTimeline, closingCta } from '../data/pages/about';
 import { defaultLocale } from '../data/i18n';
 
 const lang = defaultLocale;
@@ -25,46 +25,72 @@ const lang = defaultLocale;
     </div>
   </section>
 
-  <!-- Who We Are -->
+  <!-- Intro -->
   <section class="py-16 md:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-6">{intro.heading}</h2>
-      {intro.paragraphs.map(p => <p class="text-base text-slate-600 leading-relaxed mb-4">{p}</p>)}
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-[1.05fr_1fr] gap-12 items-stretch">
+        <div class="relative rounded-xl overflow-hidden min-h-[460px] bg-gradient-to-br from-[#0F2440] to-[#1B365D]">
+          <div class="absolute inset-0 bg-cover bg-center" style={`background-image:url('${intro.image}')`}></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2440]/85 via-[#0F2440]/20 to-transparent"></div>
+          <div class="absolute left-6 bottom-6 bg-white rounded-xl px-5 py-4 shadow-lg flex items-center gap-3 z-10">
+            <span class="text-3xl font-bold text-aam-blue">{intro.badge}</span>
+            <span class="text-sm font-medium text-slate-600 leading-tight whitespace-pre-line">{intro.badgeLabel}</span>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center py-6">
+          <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4 w-fit">
+            {intro.eyebrow}
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-5">{intro.heading}</h2>
+          {intro.paragraphs.map(p => <p class="text-base text-slate-600 leading-relaxed mb-3">{p}</p>)}
+          <div class="grid grid-cols-3 gap-3 mt-4">
+            {intro.facts.map(f => (
+              <div class="bg-white border border-slate-200 rounded-lg px-4 py-3">
+                <div class="text-xs uppercase tracking-[0.12em] text-slate-400 font-semibold mb-1">{f.label}</div>
+                <div class="text-sm font-semibold text-slate-800 leading-tight">{f.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Group Cards -->
   <section class="py-16 md:py-20 bg-surface-soft">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-10">{group.heading}</h2>
+      <h2 class="text-3xl font-bold text-slate-900 mb-2">{group.heading}</h2>
+      <p class="text-sm text-slate-400 font-mono mb-10">{group.address}</p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col">
-          <h3 class="text-xl font-bold text-slate-900 mb-1">{group.aamDoel.name}</h3>
-          <p class="text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.aamDoel.role}</p>
-          <div class="space-y-1.5 text-base text-slate-500 mb-6">
-            <p>{group.aamDoel.address}</p>
-            <p class="font-mono text-sm text-slate-400">{group.aamDoel.embs}</p>
-            <p class="font-mono text-sm text-slate-400">{group.aamDoel.edb}</p>
-            <p class="font-mono text-sm text-slate-400">{group.aamDoel.activity}</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">{group.aamDoel.fullNameLatin}</h3>
+          <p class="text-sm text-slate-500 mb-1">{group.aamDoel.fullName}</p>
+          <p class="text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-1">{group.aamDoel.role}</p>
+          {group.aamDoel.manager && <p class="text-sm font-medium text-slate-700 mb-3">{group.aamDoel.manager}</p>}
+          <div class="space-y-1 text-sm text-slate-500 mb-6">
+            <p class="font-mono text-xs text-slate-400">{group.aamDoel.embs}</p>
+            <p class="font-mono text-xs text-slate-400">{group.aamDoel.edb}</p>
           </div>
         </div>
         <div class="bg-aam-blue text-white rounded-xl p-7 flex flex-col">
-          <h3 class="text-xl font-bold text-white mb-1">{group.aamAirport.name}</h3>
-          <p class="text-xs tracking-[0.14em] text-aam-gold uppercase font-semibold font-mono mb-4">{group.aamAirport.role}</p>
-          <div class="space-y-1.5 text-base text-white/70 leading-relaxed mb-6">
-            <p>{group.aamAirport.desc}</p>
-            <p class="font-mono text-sm text-white/50">{group.aamAirport.embs}</p>
-            <p class="font-mono text-sm text-white/50">{group.aamAirport.edb}</p>
+          <h3 class="text-xl font-bold text-white mb-1">{group.aamAirport.fullNameLatin}</h3>
+          <p class="text-sm text-white/60 mb-1">{group.aamAirport.fullName}</p>
+          <p class="text-xs tracking-[0.14em] text-aam-gold uppercase font-semibold font-mono mb-1">{group.aamAirport.role}</p>
+          {group.aamAirport.manager && <p class="text-sm font-medium text-white/80 mb-3">{group.aamAirport.manager}</p>}
+          <div class="space-y-1 text-sm mb-6">
+            <p class="font-mono text-xs text-white/50">{group.aamAirport.embs}</p>
+            <p class="font-mono text-xs text-white/50">{group.aamAirport.edb}</p>
           </div>
           <a href="/services" class="mt-auto inline-flex items-center gap-2 text-aam-gold font-semibold text-base hover:underline">{group.aamAirport.cta} →</a>
         </div>
         <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col">
-          <h3 class="text-xl font-bold text-slate-900 mb-1">{group.avionet.name}</h3>
-          <p class="text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-4">{group.avionet.role}</p>
-          <div class="space-y-1.5 text-base text-slate-500 leading-relaxed mb-6">
-            <p>{group.avionet.desc}</p>
-            <p class="font-mono text-sm text-slate-400">{group.avionet.embs}</p>
-            <p class="font-mono text-sm text-slate-400">{group.avionet.edb}</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">{group.avionet.fullNameLatin}</h3>
+          <p class="text-sm text-slate-500 mb-1">{group.avionet.fullName}</p>
+          <p class="text-xs tracking-[0.14em] text-slate-400 uppercase font-semibold font-mono mb-1">{group.avionet.role}</p>
+          {group.avionet.manager && <p class="text-sm font-medium text-slate-700 mb-3">{group.avionet.manager}</p>}
+          <div class="space-y-1 text-sm mb-6">
+            <p class="font-mono text-xs text-slate-400">{group.avionet.embs}</p>
+            <p class="font-mono text-xs text-slate-400">{group.avionet.edb}</p>
           </div>
           <a href="https://avio.net.mk" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-aam-blue font-semibold text-base hover:underline">{group.avionet.cta} ↗</a>
         </div>
@@ -90,25 +116,6 @@ const lang = defaultLocale;
           </div>
         </div>
       ))}
-    </div>
-  </section>
-
-  <!-- Leadership -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-6">{leadership.heading}</h2>
-      <div class="grid md:grid-cols-2 gap-6 mt-4">
-        {leadershipTeam.map(person => (
-          <div class="bg-white border border-slate-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-1">{person.name}</h3>
-            <p class="text-sm text-slate-500 mb-2">{person.title}</p>
-            {person.linkedin && (
-              <a href={person.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-slate-400 hover:text-aam-blue transition-colors">LinkedIn ↗</a>
-            )}
-          </div>
-        ))}
-      </div>
-      <p class="text-sm text-slate-500 mt-6 pt-6 border-t border-slate-200">{leadership.ownership}</p>
     </div>
   </section>
 

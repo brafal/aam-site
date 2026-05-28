@@ -62,8 +62,8 @@ export const servicesOverview = {
       ],
     },
     {
-      name: 'Crew & Flight Support Logistics',
-      desc: 'Complete logistics support for operating crew and positioning flights — from accommodation to in-flight catering.',
+      name: 'Logistics & Crew Support',
+      desc: 'Complete logistics support for operating crew and positioning flights — from HOTAC to in-flight catering, plus cargo coordination.',
       href: '/services/cargo-logistics',
       bullets: [
         'HOTAC — Hotel accommodation for crew & passengers',

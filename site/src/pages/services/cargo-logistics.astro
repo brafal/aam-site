@@ -19,17 +19,19 @@ const lang = defaultLocale;
   </section>
   <section class="py-16 md:py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4">{page.body.heading}</h2>
-      <ul class="space-y-2 mb-10">
-        {page.body.items.map(item => (
-          <li class="flex items-start gap-3 text-[15px] text-slate-600"><svg class="w-4 h-4 text-aam-gold shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>{item}</li>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        {page.sections.map(section => (
+          <div class="bg-surface-soft rounded-xl p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3">{section.heading}</h3>
+            <p class="text-[15px] text-slate-600 leading-relaxed">{section.text}</p>
+          </div>
         ))}
-      </ul>
+      </div>
       <div class="bg-surface-soft rounded-xl p-6">
         <h3 class="text-lg font-bold text-slate-900 mb-3">Available At</h3>
         <div class="grid sm:grid-cols-2 gap-4 text-sm text-slate-600">
-          <div><strong class="text-slate-900">SKP</strong> — {page.body.skp}</div>
-          <div><strong class="text-slate-900">OHD</strong> — {page.body.ohd}</div>
+          <div><strong class="text-slate-900">SKP</strong> — {page.skp}</div>
+          <div><strong class="text-slate-900">OHD</strong> — {page.ohd}</div>
         </div>
       </div>
     </div>
