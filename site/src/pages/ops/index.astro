@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const links = [
+  {
+    href: '/ops/supervision-report',
+    title: 'Supervision Report',
+    desc: 'Submit a supervision report for flight operations at SKP or OHD. Supervisor details, services provided, quality checks, and MVT routing.',
+  },
+  {
+    href: '/ops/safety-report',
+    title: 'Safety Report',
+    desc: 'Report a safety observation, incident, or concern. All submissions are handled confidentially per AAM safety management procedures.',
+  },
+];
+---
+
+<Layout title="AAM Operations" description="Internal operations forms for AAM Airport DOO">
+  <div class="min-h-screen bg-surface-soft py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-aam-blue bg-aam-blue-light px-3 py-1.5 rounded-full mb-4">
+          AAM Operations
+        </span>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 -tracking-[0.015em] mb-2">Operations Forms</h1>
+        <p class="text-base text-slate-500">Internal forms for AAM operations staff.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        {links.map(link => (
+          <a href={link.href} class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md hover:border-aam-blue/30 transition-all">
+            <h2 class="text-lg font-bold text-slate-900 mb-2">{link.title} →</h2>
+            <p class="text-sm text-slate-500 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

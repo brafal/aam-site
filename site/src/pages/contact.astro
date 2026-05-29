@@ -63,6 +63,8 @@ const lang = defaultLocale;
           <h2 class="text-2xl font-bold text-slate-900 mb-6">{form.heading}</h2>
           <form id="contact-form" class="space-y-4">
             <input type="hidden" name="access_key" value={web3formsKey || ''} />
+            <input type="hidden" name="subject" value="AAM Website — Contact Enquiry" />
+            <input type="hidden" name="from_name" value="AAM Website Contact Form" />
             <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div>
               <label class="block text-sm font-semibold text-slate-700 mb-1">Full name *</label>
