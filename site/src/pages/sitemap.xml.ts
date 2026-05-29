@@ -6,6 +6,7 @@ export async function GET() {
     '/privacy',
     '/terms',
     '/services',
+    '/services/station-management',
     '/services/ground-handling',
     '/services/passenger-services',
     '/services/fuel-services',

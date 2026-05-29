@@ -7,7 +7,7 @@ export const hero = {
   badge: 'Since 1992',
   heading: 'Ground Handling Supervision & Aviation Support in Macedonia',
   subheading: 'Station management, ramp, passenger, fuel and cargo services at Skopje and Ohrid airports — since 1992.',
-  ctaPrimary: '24/7 Operational Support',
+  ctaPrimary: 'Request Operational Support',
   ctaSecondary: 'Our Services',
 };
 
@@ -19,23 +19,12 @@ export const servicesOverview = {
     {
       name: 'Station Management',
       desc: 'Complete flight operations support, irregularity handling and station supervision at SKP and OHD airports.',
-      href: '/services/ground-handling',
+      href: '/services/station-management',
       bullets: [
         'Station Representation & Supervision',
         'Flight Operations Assistance',
         'Irregularity Operations Support',
         'Liaising with Port Authorities',
-      ],
-    },
-    {
-      name: 'Passenger Services',
-      desc: 'Supervised check-in, gate, VIP services, arrivals and transfers — including a dedicated airport ticketing sales desk.',
-      href: '/services/passenger-services',
-      bullets: [
-        'Gate Services & Document/Visa Check',
-        'Arrival & Transfer Services',
-        'VIP & Special Passenger Services',
-        'Special Assistance Services',
       ],
     },
     {
@@ -48,6 +37,17 @@ export const servicesOverview = {
         'Cabin cleaning & crew transport',
         'De/Anti-icing, GPU & push-back coordination',
         'ULD control & load supervision',
+      ],
+    },
+    {
+      name: 'Passenger Services',
+      desc: 'Supervised check-in, gate, VIP services, arrivals and transfers — including a dedicated airport ticketing sales desk.',
+      href: '/services/passenger-services',
+      bullets: [
+        'Gate Services & Document/Visa Check',
+        'Arrival & Transfer Services',
+        'VIP & Special Passenger Services',
+        'Special Assistance Services',
       ],
     },
     {

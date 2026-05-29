@@ -3,6 +3,7 @@ export const navLinks = [
     label: 'Services',
     path: '/services',
     children: [
+      { label: 'Station Management', path: '/services/station-management' },
       { label: 'Ground Handling Supervision', path: '/services/ground-handling' },
       { label: 'Passenger Services', path: '/services/passenger-services' },
       { label: 'Fuel Services', path: '/services/fuel-services' },

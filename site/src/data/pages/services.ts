@@ -15,8 +15,14 @@ export const index = {
 
 export const aamServices = [
   {
+    name: 'Station Management',
+    desc: 'Full station representation and flight operations support at SKP and OHD. Irregularity handling, port authority liaison and 24/7 operational coverage.',
+    href: '/services/station-management',
+    provider: 'AAM Airport DOO',
+  },
+  {
     name: 'Ground Handling Supervision',
-    desc: 'Ground handling supervision and station management at Skopje and Ohrid airports. Ramp supervision, aircraft turnaround coordination and on-ground representation since 1992.',
+    desc: 'Ramp supervision and aircraft turnaround coordination at Skopje and Ohrid airports. We coordinate third-party ground handlers on behalf of the airline.',
     href: '/services/ground-handling',
     provider: 'AAM Airport DOO',
   },
@@ -41,6 +47,34 @@ export const aamServices = [
 ];
 
 // Individual service page content
+export const stationManagement = {
+  meta: {
+    title: 'Station Management at SKP & OHD | AAM Airport Services',
+    description: 'Full station management and representation at Skopje and Ohrid airports. Flight operations support, irregularity handling and port authority liaison since 1992.',
+  },
+  hero: {
+    heading: 'Station Management',
+    providerLine: 'Delivered by AAM Airport DOO',
+    intro: 'Complete station management and airline representation at Skopje (SKP) and Ohrid (OHD) airports. We act as your on-the-ground presence — managing flight operations, handling irregularities and liaising with airport authorities on your behalf.',
+  },
+  body: {
+    heading: 'Station Representation & Operations',
+    text: 'AAM serves as the airline\'s local station representative — overseeing all ground operations, coordinating with third-party handlers, and ensuring every flight departs safely and on time.',
+    items: [
+      'Station representation & supervision',
+      'Flight operations assistance & dispatch',
+      'Irregularity operations support (IROPS)',
+      'Liaising with port & airport authorities',
+      'Check-in services',
+      'Lost & found services',
+      'On-time performance monitoring & reporting',
+      '24/7 operational coverage at both airports',
+    ],
+    skp: 'Skopje International Airport (SKP) — year-round, 24/7 operational coverage',
+    ohd: 'Ohrid Airport (OHD) — seasonal and year-round scheduled services',
+  },
+};
+
 export const groundHandling = {
   meta: {
     title: 'Ground Handling Supervision at SKP & OHD | AAM Airport Services',
