@@ -28,7 +28,7 @@ const lang = defaultLocale;
 
       <form id="gh-form" action="https://api.web3forms.com/submit" method="POST" class="bg-white border border-slate-200 rounded-xl p-8">
         <input type="hidden" name="access_key" value={web3formsKey} />
-        <input type="hidden" name="subject" value="Ground Handling Supervision Request via aam.com.mk" />
+        <input type="hidden" name="subject" value="AAM Web Form — Ground Handling Supervision Request" />
         <input type="hidden" name="from_name" value="AAM Ground Handling Supervision" />
         <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
 
@@ -186,7 +186,6 @@ const lang = defaultLocale;
           </div>
         </fieldset>
 
-        <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAADSoo23oHW_wUSEq" data-theme="light"></div>
         <button type="submit" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-aam-blue-dark transition-colors">
           Submit Request →
         </button>
@@ -267,13 +266,6 @@ const lang = defaultLocale;
     // ── Form submission ──────────────────────────────────────────────
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const ts = form.querySelector('[name="cf-turnstile-response"]');
-      if (!ts || !ts.value) {
-        result.textContent = 'Please wait — security check loading. Try again in a moment.';
-        result.classList.remove('hidden');
-        result.classList.add('text-red-600');
-        return;
-      }
       const btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
       btn.textContent = 'Sending...';
@@ -288,7 +280,7 @@ const lang = defaultLocale;
           form.reset();
           // clear autocomplete hidden inputs
           form.querySelectorAll('.autocomplete-wrapper input[type="hidden"]').forEach(h => h.value = '');
-          if (window.turnstile) turnstile.reset();
+
         } else {
           throw new Error(data.message || 'Submission failed');
         }

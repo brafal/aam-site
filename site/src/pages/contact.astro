@@ -63,7 +63,7 @@ const lang = defaultLocale;
           <h2 class="text-2xl font-bold text-slate-900 mb-6">{form.heading}</h2>
           <form id="contact-form" class="space-y-4">
             <input type="hidden" name="access_key" value={web3formsKey || ''} />
-            <input type="hidden" name="subject" value="AAM Website — Contact Enquiry" />
+            <input type="hidden" name="subject" value="AAM Web Form — Contact Enquiry" />
             <input type="hidden" name="from_name" value="AAM Website Contact Form" />
             <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div>
@@ -85,7 +85,7 @@ const lang = defaultLocale;
               <label class="block text-sm font-semibold text-slate-700 mb-1">Message *</label>
               <textarea name="message" rows="5" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-aam-blue focus:ring-2 focus:ring-aam-blue/10 resize-y" placeholder="Tell us about your enquiry..."></textarea>
             </div>
-            <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAADSoo23oHW_wUSEq" data-theme="light"></div>
+
             <button type="submit" id="submit-btn" class="inline-flex items-center gap-2 bg-aam-blue text-white px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-aam-blue-dark transition-colors">{form.submit}</button>
             <div id="form-success" class="hidden p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-800">{form.success}</div>
             <div id="form-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700" data-em-u="YWFtaW5mbw==" data-em-d="YWFtLmNvbS5taw==">Something went wrong. Please try again or email us.</div>
@@ -113,17 +113,11 @@ const lang = defaultLocale;
   const err = document.getElementById('form-error');
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const ts = form.querySelector('[name="cf-turnstile-response"]');
-    if (!ts || !ts.value) {
-      err.textContent = 'Please wait — security check loading. Try again in a moment.';
-      err?.classList.remove('hidden');
-      return;
-    }
     btn.disabled = true; btn.textContent = 'Sending...';
     ok?.classList.add('hidden'); err?.classList.add('hidden');
     try {
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
-      if (res.ok) { form.reset(); ok?.classList.remove('hidden'); if (window.turnstile) turnstile.reset(); }
+      if (res.ok) { form.reset(); ok?.classList.remove('hidden'); }
       else {
         let eu = err.getAttribute('data-em-u') || ''; let ed = err.getAttribute('data-em-d') || '';
         try { eu = atob(eu); } catch(e) {}; try { ed = atob(ed); } catch(e) {}
