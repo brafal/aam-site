@@ -1,6 +1,6 @@
 ---
 import { navLinks } from '../data/navigation';
-import { currentLocale, switchLang, t } from '../data/i18n';
+import { currentLocale } from '../data/i18n';
 import type { Locale } from '../data/i18n';
 
 interface Props {
@@ -15,8 +15,6 @@ function isActive(linkPath: string): boolean {
   return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
 }
 
-const mkUrl = switchLang(currentPath, 'mk');
-const enUrl = switchLang(currentPath, 'en');
 ---
 
 <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
@@ -76,21 +74,8 @@ const enUrl = switchLang(currentPath, 'en');
           ))}
         </nav>
 
-        <!-- Phone + Lang + CTA -->
-        <div class="flex items-center ml-3 pl-3 border-l border-slate-200 gap-3">
-          <!-- Language switcher -->
-          <div class="flex items-center gap-1 text-xs font-mono font-bold">
-            <a
-              href={enUrl}
-              class={`px-1.5 py-0.5 rounded transition-colors ${lang === 'en' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-400 hover:text-slate-600'}`}
-            >EN</a>
-            <a
-              href={mkUrl}
-              class={`px-1.5 py-0.5 rounded transition-colors ${lang === 'mk' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-300 cursor-not-allowed'}`}
-              title="Macedonian — coming soon"
-            >MK</a>
-          </div>
-
+        <!-- CTA -->
+        <div class="flex items-center ml-3 pl-3 border-l border-slate-200">
           <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-base font-semibold px-4 py-2 rounded-md hover:bg-aam-blue-dark transition-colors whitespace-nowrap">
             Get in Touch
           </a>
@@ -147,10 +132,6 @@ const enUrl = switchLang(currentPath, 'en');
       ))}
       <div class="flex items-center gap-3 px-3 pt-3 border-t border-slate-100 mt-2">
         <a href={lang === 'mk' ? '/mk/contact' : '/contact'} class="inline-block bg-aam-blue text-white text-base font-semibold px-4 py-2 rounded-md">Get in Touch</a>
-        <div class="flex items-center gap-1 text-xs font-mono font-bold ml-auto">
-          <a href={enUrl} class={`px-1.5 py-0.5 rounded ${lang === 'en' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-400'}`}>EN</a>
-          <a href={mkUrl} class={`px-1.5 py-0.5 rounded ${lang === 'mk' ? 'text-aam-blue bg-aam-blue-light' : 'text-slate-300 cursor-not-allowed'}`}>MK</a>
-        </div>
       </div>
     </nav>
   </div>

@@ -6,7 +6,7 @@ export const skp = {
   hero: {
     badge: 'SKP — Skopje International Airport',
     heading: 'Ground Handling Supervision at Skopje International Airport',
-    subtext: 'AAM has been the local aviation representative at SKP since 1992. Full station management, ground handling supervision and a permanent ticket sales desk in the Arrivals Hall.',
+    subtext: 'AAM\'s home base since 1992. Station management, ground handling supervision, and ticket sales desk in the Arrivals Hall.',
     cta: 'Request Operational Support',
   },
   overview: {
@@ -42,7 +42,7 @@ export const ohd = {
   hero: {
     badge: 'OHD — Ohrid St. Paul the Apostle Airport',
     heading: 'Ground Handling Supervision at Ohrid Airport',
-    subtext: 'Serving the southwestern Macedonia region and Lake Ohrid tourism corridor since 1997. Seasonal and year-round ground handling supervision, passenger handling and operational support at OHD.',
+    subtext: 'Ground handling supervision and operational support at Ohrid since 1997. Serving the Lake Ohrid region and southwestern Macedonia.',
     cta: 'Request Operational Support',
   },
   overview: {

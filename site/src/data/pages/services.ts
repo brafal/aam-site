@@ -55,7 +55,7 @@ export const stationManagement = {
   hero: {
     heading: 'Station Management',
     providerLine: 'Delivered by AAM Airport DOO',
-    intro: 'Complete station management and airline representation at Skopje (SKP) and Ohrid (OHD) airports. We act as your on-the-ground presence — managing flight operations, handling irregularities and liaising with airport authorities on your behalf.',
+    intro: 'On-the-ground airline representation at SKP and OHD. Flight operations management, irregularity handling, and airport authority liaison.',
   },
   body: {
     heading: 'Station Representation & Operations',
