@@ -5,6 +5,18 @@ import { defaultLocale } from '../data/i18n';
 import type { Locale } from '../data/i18n';
 import { GA_ID as gaId } from '../data/env';
 
+const gaScript = gaId ? `window._gaId = '${gaId}';
+if (localStorage.getItem('aam_cookie_consent') === 'accepted') {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window._gaId;
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', window._gaId);
+}` : '';
+
 interface Props {
   title: string;
   description: string;
@@ -69,21 +81,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://aam.com.
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- GA4 consent-gated -->
-    {gaId && (
-      <script>
-        {`window._gaId = '${gaId}';
-        if (localStorage.getItem('aam_cookie_consent') === 'accepted') {
-          var s = document.createElement('script');
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window._gaId;
-          s.async = true;
-          document.head.appendChild(s);
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', window._gaId);
-        }`}
-      </script>
-    )}
+    {gaId && <script set:html={gaScript}></script>}
   </head>
   <body class="font-sans text-slate-800 bg-white antialiased">
     <slot />
